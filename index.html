@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -15,22 +16,22 @@
 
 <style>
 
-/* =========================================
+/* =========================================================
    FONTE PRINCIPAL
-========================================= */
+========================================================= */
 
-@font-face {
-    font-family: 'Lagency';
-    src: url('./fonts/Lagency-Regular.ttf') format('truetype');
+@font-face{
+    font-family:'Lagency';
+    src:url('./fonts/Lagency-Regular.ttf') format('truetype');
 }
 
-/* =========================================
-   CONFIGURAÇÕES
-========================================= */
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
 
 :root{
 
-    /* CORES */
+    /* PALETA */
 
     --dark:#3A2D28;
     --rose:#A48374;
@@ -41,14 +42,14 @@
 
     /* LOGO */
 
-    --logo-width:120px;
-    --logo-width-mobile:90px;
+    --logo-width:130px;
+    --logo-width-mobile:95px;
 
 }
 
-/* =========================================
+/* =========================================================
    RESET
-========================================= */
+========================================================= */
 
 *{
     margin:0;
@@ -67,9 +68,9 @@ body{
     overflow-x:hidden;
 }
 
-/* =========================================
+/* =========================================================
    TIPOGRAFIA
-========================================= */
+========================================================= */
 
 h1,h2,h3,h4{
     letter-spacing:1px;
@@ -78,7 +79,7 @@ h1,h2,h3,h4{
 .section-title{
     font-size:3rem;
     font-weight:300;
-    margin-bottom:1rem;
+    line-height:1.2;
 }
 
 .gold-text{
@@ -89,16 +90,16 @@ h1,h2,h3,h4{
     color:var(--soft);
 }
 
-/* =========================================
+/* =========================================================
    HEADER
-========================================= */
+========================================================= */
 
 .header{
     position:fixed;
     top:0;
     width:100%;
     z-index:999;
-    background:rgba(58,45,40,.90);
+    background:rgba(58,45,40,.92);
     backdrop-filter:blur(12px);
     border-bottom:1px solid rgba(255,255,255,.08);
 }
@@ -110,9 +111,33 @@ h1,h2,h3,h4{
     transition:.3s;
 }
 
-/* =========================================
+.menu a{
+    position:relative;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:var(--gold);
+}
+
+.menu a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:1px;
+    background:var(--gold);
+    transition:.3s;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+/* =========================================================
    HERO
-========================================= */
+========================================================= */
 
 .hero{
     position:relative;
@@ -120,11 +145,15 @@ h1,h2,h3,h4{
     display:flex;
     align-items:center;
     overflow:hidden;
-    padding-top:140px;
+
+    /* CORREÇÃO PRINCIPAL DO CORTE */
+    padding-top:180px;
+    padding-bottom:80px;
 }
 
 .hero img.bg{
     position:absolute;
+    inset:0;
     width:100%;
     height:100%;
     object-fit:cover;
@@ -133,6 +162,7 @@ h1,h2,h3,h4{
 .hero-overlay{
     position:absolute;
     inset:0;
+
     background:
     linear-gradient(
         to right,
@@ -141,26 +171,35 @@ h1,h2,h3,h4{
     );
 }
 
-/* TEXTO SUPERIOR */
+/* SUBTÍTULO CORRIGIDO */
 
 .hero-subtitle{
-    display:block;
-    color:var(--soft);
-    text-transform:uppercase;
-    letter-spacing:3px;
-    font-size:14px;
-    line-height:30px;
-    margin-bottom:25px;
 
-    /* CORREÇÃO DO CORTE */
+    display:block;
+
+    color:var(--soft);
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:15px;
+
+    line-height:32px;
+
+    margin-bottom:28px;
 
     white-space:normal;
-    max-width:100%;
+
+    overflow:visible;
+
+    word-break:keep-all;
+
 }
 
-/* =========================================
+/* =========================================================
    BOTÕES
-========================================= */
+========================================================= */
 
 .btn-premium{
     background:var(--gold);
@@ -171,7 +210,21 @@ h1,h2,h3,h4{
 .btn-premium:hover{
     background:var(--rose);
     color:white;
+    transform:translateY(-3px);
 }
+
+.btn-outline{
+    transition:.3s;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--dark);
+}
+
+/* =========================================================
+   LINHA
+========================================================= */
 
 .line{
     width:120px;
@@ -180,9 +233,9 @@ h1,h2,h3,h4{
     margin:auto;
 }
 
-/* =========================================
+/* =========================================================
    CARDS
-========================================= */
+========================================================= */
 
 .service-card{
     transition:.4s;
@@ -193,51 +246,60 @@ h1,h2,h3,h4{
     box-shadow:0 20px 40px rgba(0,0,0,.12);
 }
 
-/* =========================================
-   GLASS EFFECT
-========================================= */
+/* =========================================================
+   GLASS
+========================================================= */
 
 .glass{
     backdrop-filter: blur(14px);
     background: rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.08);
 }
 
-/* =========================================
+/* =========================================================
    WHATSAPP
-========================================= */
+========================================================= */
 
 .whatsapp-float{
     position:fixed;
-    bottom:30px;
     right:30px;
+    bottom:30px;
     z-index:999;
 }
 
 .whatsapp-float a{
     width:65px;
     height:65px;
-    border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
+    border-radius:50%;
     background:#25D366;
     color:white;
     font-size:30px;
     box-shadow:0 10px 30px rgba(0,0,0,.25);
+    transition:.3s;
 }
 
-/* =========================================
+.whatsapp-float a:hover{
+    transform:scale(1.08);
+}
+
+/* =========================================================
    FOOTER
-========================================= */
+========================================================= */
+
+footer a{
+    transition:.3s;
+}
 
 footer a:hover{
     color:var(--gold);
 }
 
-/* =========================================
+/* =========================================================
    RESPONSIVO
-========================================= */
+========================================================= */
 
 @media(max-width:768px){
 
@@ -246,13 +308,24 @@ footer a:hover{
     }
 
     .hero{
-        padding-top:170px;
+
+        /* CORREÇÃO MOBILE */
+
+        padding-top:210px;
+        padding-bottom:100px;
+
     }
 
     .hero-subtitle{
+
         font-size:12px;
+
         letter-spacing:2px;
+
         line-height:24px;
+
+        margin-bottom:20px;
+
     }
 
     .section-title{
@@ -260,7 +333,7 @@ footer a:hover{
     }
 
     h1{
-        font-size:2.8rem !important;
+        font-size:2.9rem !important;
         line-height:1.2 !important;
     }
 
@@ -276,17 +349,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body>
 
-<!-- =========================================
+<!-- =========================================================
      HEADER
-========================================= -->
+========================================================= -->
 
 <header class="header">
 
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         <!-- LOGO -->
-
-        <!-- ALTERE O CAMINHO DA LOGO -->
+        <!-- ALTERE AQUI O CAMINHO DA LOGO -->
         <!-- ALTERE O TAMANHO NAS VARIÁVEIS CSS -->
 
         <a href="#">
@@ -301,7 +373,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <!-- MENU -->
 
-        <nav class="hidden md:flex items-center gap-10 text-white text-sm tracking-[3px]">
+        <nav class="menu hidden md:flex items-center gap-10 text-white text-sm tracking-[3px]">
 
             <a href="#sobre">SOBRE</a>
 
@@ -317,9 +389,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </header>
 
-<!-- =========================================
+<!-- =========================================================
      HERO
-========================================= -->
+========================================================= -->
 
 <section class="hero">
 
@@ -371,7 +443,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
                 <a href="https://www.instagram.com/nagylatravagliaoficial?igsh=NG5pNzcwMjVjYXc3"
                 target="_blank"
-                class="px-8 py-4 rounded-full border border-white text-white hover:bg-white hover:text-[#3A2D28] duration-300 tracking-widest">
+                class="btn-outline px-8 py-4 rounded-full border border-white text-white tracking-widest">
 
                     INSTAGRAM
 
@@ -385,9 +457,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================
+<!-- =========================================================
      SOBRE
-========================================= -->
+========================================================= -->
 
 <section id="sobre" class="py-28 bg-[#F1EDE6]">
 
@@ -397,7 +469,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
             <img
             src="images/nagila.jpeg"
-            class="rounded-[40px] shadow-2xl"
+            class="rounded-[40px] shadow-2xl w-full"
             />
 
         </div>
@@ -438,9 +510,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================
+<!-- =========================================================
      SERVIÇOS
-========================================= -->
+========================================================= -->
 
 <section id="servicos" class="py-28 bg-[#EBE3DB]">
 
@@ -462,6 +534,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
+            <!-- CARD -->
+
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
                 <div class="text-5xl gold-text mb-6">
@@ -473,11 +547,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </h3>
 
                 <p class="leading-8 text-[#5d5752]">
+
                     Palestras transformadoras sobre inteligência emocional,
                     propósito, autoestima e desenvolvimento humano.
+
                 </p>
 
             </div>
+
+            <!-- CARD -->
 
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
@@ -490,11 +568,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </h3>
 
                 <p class="leading-8 text-[#5d5752]">
+
                     Sessões individuais focadas em cura emocional,
                     desbloqueios internos e fortalecimento pessoal.
+
                 </p>
 
             </div>
+
+            <!-- CARD -->
 
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
@@ -507,8 +589,73 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </h3>
 
                 <p class="leading-8 text-[#5d5752]">
+
                     Processos voltados ao autoconhecimento,
                     expansão da consciência e evolução pessoal.
+
+                </p>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
+
+                <div class="text-5xl gold-text mb-6">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <h3 class="text-2xl mb-5">
+                    Mentorias
+                </h3>
+
+                <p class="leading-8 text-[#5d5752]">
+
+                    Acompanhamentos personalizados para mulheres,
+                    profissionais e líderes em busca de transformação.
+
+                </p>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
+
+                <div class="text-5xl gold-text mb-6">
+                    <i class="fa-solid fa-spa"></i>
+                </div>
+
+                <h3 class="text-2xl mb-5">
+                    Vivências Terapêuticas
+                </h3>
+
+                <p class="leading-8 text-[#5d5752]">
+
+                    Experiências profundas de reconexão,
+                    espiritualidade, equilíbrio e cura interior.
+
+                </p>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
+
+                <div class="text-5xl gold-text mb-6">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+
+                <h3 class="text-2xl mb-5">
+                    Eventos Premium
+                </h3>
+
+                <p class="leading-8 text-[#5d5752]">
+
+                    Participação em congressos, eventos corporativos,
+                    retiros e encontros exclusivos de alto impacto.
+
                 </p>
 
             </div>
@@ -519,47 +666,174 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================
-     CONTATO
-========================================= -->
+<!-- =========================================================
+     PALESTRAS
+========================================================= -->
 
-<section id="contato" class="py-24 bg-[#F1EDE6]">
+<section id="palestras" class="py-28 bg-[#3A2D28] text-white">
 
     <div class="max-w-6xl mx-auto px-6 text-center">
 
-        <span class="uppercase tracking-[5px] text-[#A48374]">
-            Contato
+        <span class="uppercase tracking-[5px] text-[#CBAD8D]">
+            Impacto
         </span>
 
-        <h2 class="section-title mt-5">
-            Vamos conversar.
+        <h2 class="section-title mt-5 text-white">
+
+            Palestras que inspiram transformação.
+
         </h2>
 
-        <div class="line mb-10"></div>
+        <div class="line"></div>
 
-        <div class="flex flex-col gap-6 items-center text-lg">
+        <p class="max-w-4xl mx-auto text-lg leading-9 text-[#D1C7BD] mt-10">
+
+            Uma comunicação elegante, humana e impactante,
+            levando mensagens de superação, inteligência emocional,
+            propósito de vida e transformação interior para empresas,
+            mulheres, eventos e instituições.
+
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8 mt-20">
+
+            <div class="glass p-10 rounded-[30px]">
+
+                <h3 class="text-5xl gold-text mb-3">+100</h3>
+
+                <p>Atendimentos e experiências transformadoras</p>
+
+            </div>
+
+            <div class="glass p-10 rounded-[30px]">
+
+                <h3 class="text-5xl gold-text mb-3">Premium</h3>
+
+                <p>Posicionamento sofisticado e humanizado</p>
+
+            </div>
+
+            <div class="glass p-10 rounded-[30px]">
+
+                <h3 class="text-5xl gold-text mb-3">Alto Impacto</h3>
+
+                <p>Palestras e mentorias inspiradoras</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="py-28 bg-[#CBAD8D]">
+
+    <div class="max-w-5xl mx-auto px-6 text-center">
+
+        <h2 class="text-4xl md:text-6xl text-[#3A2D28] leading-tight">
+
+            Sua transformação começa agora.
+
+        </h2>
+
+        <p class="text-xl mt-8 text-[#4b3f3a] leading-9">
+
+            Agende um atendimento, palestra ou mentoria personalizada.
+
+        </p>
+
+        <a href="https://wa.me/553196477862"
+        target="_blank"
+        class="inline-block mt-10 px-10 py-5 bg-[#3A2D28] text-white rounded-full tracking-[3px] hover:scale-105 duration-300">
+
+            FALAR NO WHATSAPP
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     CONTATO
+========================================================= -->
+
+<section id="contato" class="py-24 bg-[#F1EDE6]">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+
+            <span class="uppercase tracking-[5px] text-[#A48374]">
+                Contato
+            </span>
+
+            <h2 class="section-title mt-5">
+                Vamos conversar.
+            </h2>
+
+            <div class="line mb-10"></div>
+
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
 
             <a href="https://wa.me/553196477862"
             target="_blank"
-            class="hover:text-[#A48374]">
+            class="bg-white rounded-[30px] p-10 text-center shadow-lg hover:-translate-y-2 duration-300">
 
-                WhatsApp: (31) 96477-7862
+                <div class="text-5xl gold-text mb-6">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+
+                <h3 class="text-2xl mb-4">
+                    WhatsApp
+                </h3>
+
+                <p class="text-[#5d5752]">
+                    (31) 96477-7862
+                </p>
 
             </a>
 
             <a href="https://www.instagram.com/nagylatravagliaoficial?igsh=NG5pNzcwMjVjYXc3"
             target="_blank"
-            class="hover:text-[#A48374]">
+            class="bg-white rounded-[30px] p-10 text-center shadow-lg hover:-translate-y-2 duration-300">
 
-                Instagram Oficial
+                <div class="text-5xl gold-text mb-6">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <h3 class="text-2xl mb-4">
+                    Instagram
+                </h3>
+
+                <p class="text-[#5d5752]">
+                    @nagylatravagliaoficial
+                </p>
 
             </a>
 
             <a href="https://linktr.ee/Nagylatravaglia"
             target="_blank"
-            class="hover:text-[#A48374]">
+            class="bg-white rounded-[30px] p-10 text-center shadow-lg hover:-translate-y-2 duration-300">
 
-                Linktree Oficial
+                <div class="text-5xl gold-text mb-6">
+                    <i class="fa-solid fa-link"></i>
+                </div>
+
+                <h3 class="text-2xl mb-4">
+                    Linktree
+                </h3>
+
+                <p class="text-[#5d5752]">
+                    Acessar Links Oficiais
+                </p>
 
             </a>
 
@@ -569,9 +843,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================
+<!-- =========================================================
      FOOTER
-========================================= -->
+========================================================= -->
 
 <footer class="bg-[#3A2D28] py-10 text-center text-[#D1C7BD]">
 
@@ -617,9 +891,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </footer>
 
-<!-- =========================================
+<!-- =========================================================
      BOTÃO WHATSAPP
-========================================= -->
+========================================================= -->
 
 <div class="whatsapp-float">
 
