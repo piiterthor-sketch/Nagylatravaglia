@@ -7,8 +7,10 @@
 
 <title>Nagyla Travaglia | Palestrante & Terapeuta</title>
 
+<!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
 
+<!-- Fonte -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -89,17 +91,16 @@ h1,h2,h3,h4{
 }
 
 /* =========================================================
-   HEADER
+   HEADER TRANSPARENTE
 ========================================================= */
 
 .header{
-    position:fixed;
+    position:absolute; /* Mudado para absolute para sobrepor o Hero sem empurrar o layout */
     top:0;
     width:100%;
     z-index:999;
-    background:rgba(179,144,122,.92); /* Baseada na cor #B3907A */
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(255,255,255,.08);
+    background:transparent; /* Totalmente transparente conforme solicitado */
+    border-bottom:none;     /* Removida a borda para um visual limpo */
 }
 
 .logo-site{
@@ -339,6 +340,7 @@ footer a:hover{
 
 </style>
 
+<!-- ICONS -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
@@ -346,9 +348,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body>
 
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
 <header class="header">
 
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <!-- LOGO -->
+        <!-- ALTERE AQUI O CAMINHO DA LOGO -->
+        <!-- ALTERE O TAMANHO NAS VARIÁVEIS CSS -->
 
         <a href="#">
 
@@ -359,6 +369,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             >
 
         </a>
+
+        <!-- MENU -->
 
         <nav class="menu hidden md:flex items-center gap-10 text-white text-sm tracking-[3px]">
 
@@ -376,7 +388,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </header>
 
+<!-- =========================================================
+     HERO
+========================================================= -->
+
 <section class="hero">
+
+    <!-- IMAGEM FUNDO -->
 
     <img
         src="images/nagila4.jpeg"
@@ -388,6 +406,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
         <div>
+
+            <!-- TEXTO CORRIGIDO -->
 
             <span class="hero-subtitle">
 
@@ -435,6 +455,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
 
 </section>
+
+<!-- =========================================================
+     SOBRE
+========================================================= -->
 
 <section id="sobre" class="py-28 bg-[#F5F5EB]">
 
@@ -485,6 +509,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
+<!-- =========================================================
+     SERVIÇOS
+========================================================= -->
+
 <section id="servicos" class="py-28 bg-[#EFE7DA]">
 
     <div class="max-w-7xl mx-auto px-6">
@@ -505,6 +533,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
+            <!-- CARD -->
+
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
                 <div class="text-5xl gold-text mb-6">
@@ -523,6 +553,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </p>
 
             </div>
+
+            <!-- CARD -->
 
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
@@ -543,6 +575,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
             </div>
 
+            <!-- CARD -->
+
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
                 <div class="text-5xl gold-text mb-6">
@@ -561,6 +595,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </p>
 
             </div>
+
+            <!-- CARD -->
 
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
@@ -581,6 +617,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
             </div>
 
+            <!-- CARD -->
+
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
                 <div class="text-5xl gold-text mb-6">
@@ -599,6 +637,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </p>
 
             </div>
+
+            <!-- CARD -->
 
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
@@ -624,6 +664,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
 
 </section>
+
+<!-- =========================================================
+     PALESTRAS
+========================================================= -->
 
 <section id="palestras" class="py-28 bg-[#B3907A] text-white">
 
@@ -682,6 +726,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
+<!-- =========================================================
+     CTA
+========================================================= -->
+
 <section class="py-28 bg-[#C1B6A3]">
 
     <div class="max-w-5xl mx-auto px-6 text-center">
@@ -709,6 +757,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
 
 </section>
+
+<!-- =========================================================
+     CONTATO
+========================================================= -->
 
 <section id="contato" class="py-24 bg-[#F5F5EB]">
 
@@ -790,6 +842,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer class="bg-[#B3907A] py-10 text-center text-[#E1DACA]">
 
     <div class="max-w-7xl mx-auto px-6">
@@ -833,6 +889,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
 
 </footer>
+
+<!-- =========================================================
+     BOTÃO WHATSAPP
+========================================================= -->
 
 <div class="whatsapp-float">
 
