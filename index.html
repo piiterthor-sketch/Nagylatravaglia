@@ -7,10 +7,8 @@
 
 <title>Nagyla Travaglia | Palestrante & Terapeuta</title>
 
-<!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Fonte -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -31,14 +29,14 @@
 
 :root{
 
-    /* PALETA */
+    /* PALETA ATUALIZADA CONFORME A IMAGEM */
 
-    --dark:#3A2D28;
-    --rose:#A48374;
-    --gold:#CBAD8D;
-    --soft:#D1C7BD;
-    --light:#EBE3DB;
-    --white:#F1EDE6;
+    --dark:#B3907A;
+    --rose:#C1B6A3;
+    --gold:#C1B6A3;
+    --soft:#E1DACA;
+    --light:#EFE7DA;
+    --white:#F5F5EB;
 
     /* LOGO */
 
@@ -99,7 +97,7 @@ h1,h2,h3,h4{
     top:0;
     width:100%;
     z-index:999;
-    background:rgba(58,45,40,.92);
+    background:rgba(179,144,122,.92); /* Baseada na cor #B3907A */
     backdrop-filter:blur(12px);
     border-bottom:1px solid rgba(255,255,255,.08);
 }
@@ -117,7 +115,7 @@ h1,h2,h3,h4{
 }
 
 .menu a:hover{
-    color:var(--gold);
+    color:var(--white);
 }
 
 .menu a::after{
@@ -127,7 +125,7 @@ h1,h2,h3,h4{
     bottom:-6px;
     width:0%;
     height:1px;
-    background:var(--gold);
+    background:var(--white);
     transition:.3s;
 }
 
@@ -166,8 +164,8 @@ h1,h2,h3,h4{
     background:
     linear-gradient(
         to right,
-        rgba(58,45,40,.94),
-        rgba(58,45,40,.72)
+        rgba(179,144,122,.94), /* Baseada na cor #B3907A */
+        rgba(179,144,122,.72)
     );
 }
 
@@ -208,7 +206,7 @@ h1,h2,h3,h4{
 }
 
 .btn-premium:hover{
-    background:var(--rose);
+    background:var(--dark);
     color:white;
     transform:translateY(-3px);
 }
@@ -294,7 +292,7 @@ footer a{
 }
 
 footer a:hover{
-    color:var(--gold);
+    color:var(--white);
 }
 
 /* =========================================================
@@ -341,7 +339,6 @@ footer a:hover{
 
 </style>
 
-<!-- ICONS -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
@@ -349,17 +346,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body>
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
 <header class="header">
 
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-
-        <!-- LOGO -->
-        <!-- ALTERE AQUI O CAMINHO DA LOGO -->
-        <!-- ALTERE O TAMANHO NAS VARIÁVEIS CSS -->
 
         <a href="#">
 
@@ -370,8 +359,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             >
 
         </a>
-
-        <!-- MENU -->
 
         <nav class="menu hidden md:flex items-center gap-10 text-white text-sm tracking-[3px]">
 
@@ -389,13 +376,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </header>
 
-<!-- =========================================================
-     HERO
-========================================================= -->
-
 <section class="hero">
-
-    <!-- IMAGEM FUNDO -->
 
     <img
         src="images/nagila4.jpeg"
@@ -407,8 +388,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
         <div>
-
-            <!-- TEXTO CORRIGIDO -->
 
             <span class="hero-subtitle">
 
@@ -422,7 +401,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
             </h1>
 
-            <p class="text-[#EBE3DB] mt-8 text-lg leading-8 max-w-xl">
+            <p class="text-[#F5F5EB] mt-8 text-lg leading-8 max-w-xl">
 
                 Nagyla Travaglia atua impactando pessoas através de palestras,
                 terapias, mentorias e experiências transformadoras voltadas ao
@@ -457,11 +436,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================================
-     SOBRE
-========================================================= -->
-
-<section id="sobre" class="py-28 bg-[#F1EDE6]">
+<section id="sobre" class="py-28 bg-[#F5F5EB]">
 
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
 
@@ -476,7 +451,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <div>
 
-            <span class="uppercase tracking-[5px] text-[#A48374]">
+            <span class="uppercase tracking-[5px] text-[#C1B6A3]">
                 Sobre Nagyla
             </span>
 
@@ -488,7 +463,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
             <div class="line ml-0 mb-8"></div>
 
-            <p class="text-lg leading-9 text-[#5a4d48]">
+            <p class="text-lg leading-9 text-[#B3907A]">
 
                 Reconhecida por seu trabalho transformador, Nagyla Travaglia
                 desenvolve experiências profundas voltadas ao equilíbrio emocional,
@@ -496,7 +471,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
             </p>
 
-            <p class="text-lg leading-9 text-[#5a4d48] mt-6">
+            <p class="text-lg leading-9 text-[#B3907A] mt-6">
 
                 Com uma abordagem humanizada, sofisticada e acolhedora,
                 seus encontros unem sensibilidade, espiritualidade,
@@ -510,17 +485,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================================
-     SERVIÇOS
-========================================================= -->
-
-<section id="servicos" class="py-28 bg-[#EBE3DB]">
+<section id="servicos" class="py-28 bg-[#EFE7DA]">
 
     <div class="max-w-7xl mx-auto px-6">
 
         <div class="text-center mb-20">
 
-            <span class="uppercase tracking-[5px] text-[#A48374]">
+            <span class="uppercase tracking-[5px] text-[#B3907A]">
                 Serviços
             </span>
 
@@ -534,8 +505,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- CARD -->
-
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
                 <div class="text-5xl gold-text mb-6">
@@ -546,7 +515,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     Palestras Motivacionais
                 </h3>
 
-                <p class="leading-8 text-[#5d5752]">
+                <p class="leading-8 text-[#B3907A]">
 
                     Palestras transformadoras sobre inteligência emocional,
                     propósito, autoestima e desenvolvimento humano.
@@ -554,8 +523,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </p>
 
             </div>
-
-            <!-- CARD -->
 
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
@@ -567,7 +534,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     Terapia Emocional
                 </h3>
 
-                <p class="leading-8 text-[#5d5752]">
+                <p class="leading-8 text-[#B3907A]">
 
                     Sessões individuais focadas em cura emocional,
                     desbloqueios internos e fortalecimento pessoal.
@@ -575,8 +542,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </p>
 
             </div>
-
-            <!-- CARD -->
 
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
@@ -588,7 +553,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     Desenvolvimento Pessoal
                 </h3>
 
-                <p class="leading-8 text-[#5d5752]">
+                <p class="leading-8 text-[#B3907A]">
 
                     Processos voltados ao autoconhecimento,
                     expansão da consciência e evolução pessoal.
@@ -596,8 +561,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </p>
 
             </div>
-
-            <!-- CARD -->
 
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
@@ -609,7 +572,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     Mentorias
                 </h3>
 
-                <p class="leading-8 text-[#5d5752]">
+                <p class="leading-8 text-[#B3907A]">
 
                     Acompanhamentos personalizados para mulheres,
                     profissionais e líderes em busca de transformação.
@@ -617,8 +580,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </p>
 
             </div>
-
-            <!-- CARD -->
 
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
@@ -630,7 +591,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     Vivências Terapêuticas
                 </h3>
 
-                <p class="leading-8 text-[#5d5752]">
+                <p class="leading-8 text-[#B3907A]">
 
                     Experiências profundas de reconexão,
                     espiritualidade, equilíbrio e cura interior.
@@ -638,8 +599,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </p>
 
             </div>
-
-            <!-- CARD -->
 
             <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
 
@@ -651,7 +610,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     Eventos Premium
                 </h3>
 
-                <p class="leading-8 text-[#5d5752]">
+                <p class="leading-8 text-[#B3907A]">
 
                     Participação em congressos, eventos corporativos,
                     retiros e encontros exclusivos de alto impacto.
@@ -666,15 +625,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================================
-     PALESTRAS
-========================================================= -->
-
-<section id="palestras" class="py-28 bg-[#3A2D28] text-white">
+<section id="palestras" class="py-28 bg-[#B3907A] text-white">
 
     <div class="max-w-6xl mx-auto px-6 text-center">
 
-        <span class="uppercase tracking-[5px] text-[#CBAD8D]">
+        <span class="uppercase tracking-[5px] text-[#F5F5EB]">
             Impacto
         </span>
 
@@ -684,9 +639,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         </h2>
 
-        <div class="line"></div>
+        <div class="line" style="background: var(--white);"></div>
 
-        <p class="max-w-4xl mx-auto text-lg leading-9 text-[#D1C7BD] mt-10">
+        <p class="max-w-4xl mx-auto text-lg leading-9 text-[#E1DACA] mt-10">
 
             Uma comunicação elegante, humana e impactante,
             levando mensagens de superação, inteligência emocional,
@@ -699,25 +654,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
             <div class="glass p-10 rounded-[30px]">
 
-                <h3 class="text-5xl gold-text mb-3">+100</h3>
+                <h3 class="text-5xl text-white mb-3">+100</h3>
 
-                <p>Atendimentos e experiências transformadoras</p>
-
-            </div>
-
-            <div class="glass p-10 rounded-[30px]">
-
-                <h3 class="text-5xl gold-text mb-3">Premium</h3>
-
-                <p>Posicionamento sofisticado e humanizado</p>
+                <p class="text-[#E1DACA]">Atendimentos e experiências transformadoras</p>
 
             </div>
 
             <div class="glass p-10 rounded-[30px]">
 
-                <h3 class="text-5xl gold-text mb-3">Alto Impacto</h3>
+                <h3 class="text-5xl text-white mb-3">Premium</h3>
 
-                <p>Palestras e mentorias inspiradoras</p>
+                <p class="text-[#E1DACA]">Posicionamento sofisticado e humanizado</p>
+
+            </div>
+
+            <div class="glass p-10 rounded-[30px]">
+
+                <h3 class="text-5xl text-white mb-3">Alto Impacto</h3>
+
+                <p class="text-[#E1DACA]">Palestras e mentorias inspiradoras</p>
 
             </div>
 
@@ -727,21 +682,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================================
-     CTA
-========================================================= -->
-
-<section class="py-28 bg-[#CBAD8D]">
+<section class="py-28 bg-[#C1B6A3]">
 
     <div class="max-w-5xl mx-auto px-6 text-center">
 
-        <h2 class="text-4xl md:text-6xl text-[#3A2D28] leading-tight">
+        <h2 class="text-4xl md:text-6xl text-[#B3907A] leading-tight">
 
             Sua transformação começa agora.
 
         </h2>
 
-        <p class="text-xl mt-8 text-[#4b3f3a] leading-9">
+        <p class="text-xl mt-8 text-[#5d5752] leading-9">
 
             Agende um atendimento, palestra ou mentoria personalizada.
 
@@ -749,7 +700,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <a href="https://wa.me/553196477862"
         target="_blank"
-        class="inline-block mt-10 px-10 py-5 bg-[#3A2D28] text-white rounded-full tracking-[3px] hover:scale-105 duration-300">
+        class="inline-block mt-10 px-10 py-5 bg-[#B3907A] text-white rounded-full tracking-[3px] hover:scale-105 duration-300">
 
             FALAR NO WHATSAPP
 
@@ -759,17 +710,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================================
-     CONTATO
-========================================================= -->
-
-<section id="contato" class="py-24 bg-[#F1EDE6]">
+<section id="contato" class="py-24 bg-[#F5F5EB]">
 
     <div class="max-w-6xl mx-auto px-6">
 
         <div class="text-center mb-16">
 
-            <span class="uppercase tracking-[5px] text-[#A48374]">
+            <span class="uppercase tracking-[5px] text-[#B3907A]">
                 Contato
             </span>
 
@@ -795,7 +742,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     WhatsApp
                 </h3>
 
-                <p class="text-[#5d5752]">
+                <p class="text-[#B3907A]">
                     (31) 96477-7862
                 </p>
 
@@ -813,7 +760,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     Instagram
                 </h3>
 
-                <p class="text-[#5d5752]">
+                <p class="text-[#B3907A]">
                     @nagylatravagliaoficial
                 </p>
 
@@ -831,7 +778,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     Linktree
                 </h3>
 
-                <p class="text-[#5d5752]">
+                <p class="text-[#B3907A]">
                     Acessar Links Oficiais
                 </p>
 
@@ -843,11 +790,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer class="bg-[#3A2D28] py-10 text-center text-[#D1C7BD]">
+<footer class="bg-[#B3907A] py-10 text-center text-[#E1DACA]">
 
     <div class="max-w-7xl mx-auto px-6">
 
@@ -890,10 +833,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
 
 </footer>
-
-<!-- =========================================================
-     BOTÃO WHATSAPP
-========================================================= -->
 
 <div class="whatsapp-float">
 
