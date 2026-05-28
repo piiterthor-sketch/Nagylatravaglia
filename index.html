@@ -5,89 +5,74 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Nagyla Travaglia | Palestrante & Terapeuta</title>
+<title>KNT Instituto | Palestrante & Terapeuta</title>
 
-<!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Fonte -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   FONTE PRINCIPAL
-========================================================= */
-
-@font-face{
-    font-family:'Lagency';
-    src:url('./fonts/Lagency-Regular.ttf') format('truetype');
-}
-
-/* =========================================================
-   CONFIGURAÇÕES GERAIS
+   FONTE PRINCIPAL E IDENTIDADE KNT
 ========================================================= */
 
 :root{
 
-    /* PALETA ATUALIZADA CONFORME A IMAGEM */
-
-    --dark:#B3907A;
-    --rose:#C1B6A3;
-    --gold:#C1B6A3;
-    --soft:#E1DACA;
-    --light:#EFE7DA;
-    --white:#F5F5EB;
+    /* PALETA INSTITUCIONAL KNT */
+    --chocolate: #2B221B;
+    --bronze:    #B08A5B;
+    --taupe:     #CBBEAF;
+    --off-white: #F7F4EF;
+    --branco:    #FFFFFF;
 
     /* LOGO */
-
-    --logo-width:130px;
-    --logo-width-mobile:95px;
+    --logo-width: 140px;
+    --logo-width-mobile: 105px;
 
 }
 
 /* =========================================================
-   RESET
+   RESET & TIPOGRAFIA PREMIUM
 ========================================================= */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
 }
 
 body{
-    font-family:'Lagency', serif;
-    background:var(--white);
-    color:var(--dark);
-    overflow-x:hidden;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--off-white);
+    color: var(--chocolate);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* =========================================================
-   TIPOGRAFIA
-========================================================= */
-
-h1,h2,h3,h4{
-    letter-spacing:1px;
+/* Estilo Trajan/Montserrat H1-H4 */
+h1, h2, h3, h4 {
+    font-weight: 300;
+    letter-spacing: 0.05em;
 }
 
 .section-title{
-    font-size:3rem;
-    font-weight:300;
-    line-height:1.2;
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--chocolate);
 }
 
-.gold-text{
-    color:var(--gold);
-}
-
-.text-soft{
-    color:var(--soft);
+.bronze-text{
+    color: var(--bronze);
 }
 
 /* =========================================================
@@ -95,43 +80,44 @@ h1,h2,h3,h4{
 ========================================================= */
 
 .header{
-    position:absolute; /* Mudado para absolute para sobrepor o Hero sem empurrar o layout */
-    top:0;
-    width:100%;
-    z-index:999;
-    background:transparent; /* Totalmente transparente conforme solicitado */
-    border-bottom:none;     /* Removida a borda para um visual limpo */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: transparent;
+    border-bottom: none;
 }
 
 .logo-site{
-    width:var(--logo-width);
-    height:auto;
-    object-fit:contain;
-    transition:.3s;
+    width: var(--logo-width);
+    height: auto;
+    object-fit: contain;
+    transition: .3s;
 }
 
 .menu a{
-    position:relative;
-    transition:.3s;
+    position: relative;
+    transition: .3s;
+    font-weight: 500;
 }
 
 .menu a:hover{
-    color:var(--white);
+    color: var(--bronze);
 }
 
 .menu a::after{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0%;
-    height:1px;
-    background:var(--white);
-    transition:.3s;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 1px;
+    background: var(--bronze);
+    transition: .3s;
 }
 
 .menu a:hover::after{
-    width:100%;
+    width: 100%;
 }
 
 /* =========================================================
@@ -139,120 +125,106 @@ h1,h2,h3,h4{
 ========================================================= */
 
 .hero{
-    position:relative;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-
-    /* CORREÇÃO PRINCIPAL DO CORTE */
-    padding-top:180px;
-    padding-bottom:80px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 180px;
+    padding-bottom: 80px;
 }
 
 .hero img.bg{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero-overlay{
-    position:absolute;
-    inset:0;
-
-    background:
-    linear-gradient(
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
         to right,
-        rgba(179,144,122,.94), /* Baseada na cor #B3907A */
-        rgba(179,144,122,.72)
+        rgba(43, 34, 27, 0.95), /* Baseado no Chocolate KNT */
+        rgba(43, 34, 27, 0.70)
     );
 }
 
-/* SUBTÍTULO CORRIGIDO */
-
 .hero-subtitle{
-
-    display:block;
-
-    color:var(--soft);
-
-    text-transform:uppercase;
-
-    letter-spacing:4px;
-
-    font-size:15px;
-
-    line-height:32px;
-
-    margin-bottom:28px;
-
-    white-space:normal;
-
-    overflow:visible;
-
-    word-break:keep-all;
-
+    display: block;
+    color: var(--bronze);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
 }
 
 /* =========================================================
-   BOTÕES
+   BOTÕES PREMIUM
 ========================================================= */
 
 .btn-premium{
-    background:var(--gold);
-    color:var(--dark);
-    transition:.3s;
+    background: var(--bronze);
+    color: var(--branco);
+    transition: .4s cubic-bezier(0.16, 1, 0.3, 1);
+    font-weight: 500;
 }
 
 .btn-premium:hover{
-    background:var(--dark);
-    color:white;
-    transform:translateY(-3px);
+    background: var(--chocolate);
+    color: var(--branco);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(43, 34, 27, 0.15);
 }
 
 .btn-outline{
-    transition:.3s;
+    transition: .4s cubic-bezier(0.16, 1, 0.3, 1);
+    font-weight: 500;
 }
 
 .btn-outline:hover{
-    background:white;
-    color:var(--dark);
+    background: var(--branco);
+    color: var(--chocolate);
+    border-color: var(--branco);
 }
 
 /* =========================================================
-   LINHA
+   LINHA DE ASSINATURA
 ========================================================= */
 
 .line{
-    width:120px;
-    height:2px;
-    background:var(--gold);
-    margin:auto;
+    width: 80px;
+    height: 1px;
+    background: var(--bronze);
+    margin: auto;
 }
 
 /* =========================================================
-   CARDS
+   CARDS DE SERVIÇOS
 ========================================================= */
 
 .service-card{
-    transition:.4s;
+    transition: .4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(203, 190, 175, 0.2); /* Sutil borda Taupe */
 }
 
 .service-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(43, 34, 27, 0.06);
+    border-color: var(--taupe);
 }
 
 /* =========================================================
-   GLASS
+   GLASS EFFECT INSTITUCIONAL
 ========================================================= */
 
 .glass{
-    backdrop-filter: blur(14px);
-    background: rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* =========================================================
@@ -260,28 +232,28 @@ h1,h2,h3,h4{
 ========================================================= */
 
 .whatsapp-float{
-    position:fixed;
-    right:30px;
-    bottom:30px;
-    z-index:999;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 999;
 }
 
 .whatsapp-float a{
-    width:65px;
-    height:65px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:#25D366;
-    color:white;
-    font-size:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
-    transition:.3s;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #25D366;
+    color: var(--branco);
+    font-size: 28px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    transition: .3s;
 }
 
 .whatsapp-float a:hover{
-    transform:scale(1.08);
+    transform: scale(1.08);
 }
 
 /* =========================================================
@@ -289,11 +261,11 @@ h1,h2,h3,h4{
 ========================================================= */
 
 footer a{
-    transition:.3s;
+    transition: .3s;
 }
 
 footer a:hover{
-    color:var(--white);
+    color: var(--bronze);
 }
 
 /* =========================================================
@@ -303,76 +275,42 @@ footer a:hover{
 @media(max-width:768px){
 
     .logo-site{
-        width:var(--logo-width-mobile);
+        width: var(--logo-width-mobile);
     }
 
     .hero{
-
-        /* CORREÇÃO MOBILE */
-
-        padding-top:210px;
-        padding-bottom:100px;
-
-    }
-
-    .hero-subtitle{
-
-        font-size:12px;
-
-        letter-spacing:2px;
-
-        line-height:24px;
-
-        margin-bottom:20px;
-
+        padding-top: 200px;
+        padding-bottom: 80px;
     }
 
     .section-title{
-        font-size:2.2rem;
+        font-size: 2rem;
     }
 
     h1{
-        font-size:2.9rem !important;
-        line-height:1.2 !important;
+        font-size: 2.6rem !important;
+        line-height: 1.25 !important;
     }
 
 }
 
 </style>
 
-<!-- ICONS -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
 </head>
 
 <body>
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
 <header class="header">
 
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
-        <!-- LOGO -->
-        <!-- ALTERE AQUI O CAMINHO DA LOGO -->
-        <!-- ALTERE O TAMANHO NAS VARIÁVEIS CSS -->
-
-        <a href="#">
-
-            <img
-                src="images/logo2.png"
-                alt="Nagyla Travaglia"
-                class="logo-site"
-            >
-
+        <a href="#" class="flex items-center">
+            <img src="images/logo2.png" alt="KNT Instituto" class="logo-site">
         </a>
 
-        <!-- MENU -->
-
-        <nav class="menu hidden md:flex items-center gap-10 text-white text-sm tracking-[3px]">
+        <nav class="menu hidden md:flex items-center gap-10 text-white text-xs tracking-[0.2em]">
 
             <a href="#sobre">SOBRE</a>
 
@@ -388,18 +326,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </header>
 
-<!-- =========================================================
-     HERO
-========================================================= -->
-
 <section class="hero">
 
-    <!-- IMAGEM FUNDO -->
-
-    <img
-        src="images/nagila4.jpeg"
-        class="bg"
-    >
+    <img src="images/nagila4.jpeg" class="bg" alt="Fundo">
 
     <div class="hero-overlay"></div>
 
@@ -407,39 +336,44 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <div>
 
-            <!-- TEXTO CORRIGIDO -->
-
             <span class="hero-subtitle">
 
-                Palestrante • Terapeuta • Mentora
+                KNT INSTITUTO • PALESTRAS & TERAPIA
 
             </span>
 
-            <h1 class="text-5xl md:text-7xl text-white leading-tight">
+            <h1 class="text-4xl md:text-6xl text-white leading-tight font-light">
 
                 Transformando vidas através da cura emocional e do despertar pessoal.
 
             </h1>
 
-            <p class="text-[#F5F5EB] mt-8 text-lg leading-8 max-w-xl">
+            <p class="text-white/80 mt-8 text-base md:text-lg leading-8 max-w-xl font-light">
 
-                Nagyla Travaglia atua impactando pessoas através de palestras,
+                O KNT Instituto atua impactando pessoas através de palestras,
                 terapias, mentorias e experiências transformadoras voltadas ao
                 autoconhecimento, inteligência emocional, espiritualidade e
                 desenvolvimento humano.
 
             </p>
 
-            <div class="flex flex-wrap gap-5 mt-10">
+            <div class="flex flex-wrap gap-5 mt-10 text-xs tracking-[0.15em]">
 
                 <a href="https://wa.me/553196477862"
                 target="_blank"
-                class="px-8 py-4 rounded-full btn-premium font-semibold tracking-widest">
+                class="px-8 py-4 rounded-none btn-premium font-medium">
 
                     AGENDAR ATENDIMENTO
 
                 </a>
 
+                <a href="https://www.instagram.com/nagylatravagliaoficial?igsh=NG5pNzcwMjVjYXc3"
+                target="_blank"
+                class="btn-outline px-8 py-4 rounded-none border border-white/40 text-white">
+
+                    INSTAGRAM
+
+                </a>
 
             </div>
 
@@ -449,49 +383,42 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================================
-     SOBRE
-========================================================= -->
-
-<section id="sobre" class="py-28 bg-[#F5F5EB]">
+<section id="sobre" class="py-28 bg-[#F7F4EF]">
 
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
 
         <div>
 
-            <img
-            src="images/nagila.jpeg"
-            class="rounded-[40px] shadow-2xl w-full"
-            />
+            <img src="images/nagila.jpeg" class="shadow-xl w-full object-cover" alt="Sobre o Instituto" />
 
         </div>
 
         <div>
 
-            <span class="uppercase tracking-[5px] text-[#C1B6A3]">
-                Sobre Nagyla
+            <span class="uppercase text-xs font-semibold tracking-[0.2em] text-[#B08A5B]">
+                Sobre o Instituto
             </span>
 
-            <h2 class="section-title mt-5">
+            <h2 class="section-title mt-4">
 
-                Uma trajetória marcada por propósito, impacto e transformação.
+                Uma trajetória marcada por propósito e transformação.
 
             </h2>
 
-            <div class="line ml-0 mb-8"></div>
+            <div class="line ml-0 my-6"></div>
 
-            <p class="text-lg leading-9 text-[#B3907A]">
+            <p class="text-base leading-8 text-[#2B221B]/80 font-light">
 
-                Reconhecida por seu trabalho transformador, Nagyla Travaglia
+                Reconhecido por seu trabalho transformador, o KNT Instituto
                 desenvolve experiências profundas voltadas ao equilíbrio emocional,
                 expansão da consciência, autoestima, relacionamentos e cura interior.
 
             </p>
 
-            <p class="text-lg leading-9 text-[#B3907A] mt-6">
+            <p class="text-base leading-8 text-[#2B221B]/80 mt-6 font-light">
 
                 Com uma abordagem humanizada, sofisticada e acolhedora,
-                seus encontros unem sensibilidade, espiritualidade,
+                nossos encontros unem sensibilidade, espiritualidade,
                 desenvolvimento pessoal e inteligência emocional.
 
             </p>
@@ -502,152 +429,124 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================================
-     SERVIÇOS
-========================================================= -->
-
-<section id="servicos" class="py-28 bg-[#EFE7DA]">
+<section id="servicos" class="py-28 bg-[#FFFFFF]">
 
     <div class="max-w-7xl mx-auto px-6">
 
         <div class="text-center mb-20">
 
-            <span class="uppercase tracking-[5px] text-[#B3907A]">
+            <span class="uppercase text-xs font-semibold tracking-[0.2em] text-[#B08A5B]">
                 Serviços
             </span>
 
-            <h2 class="section-title mt-5">
+            <h2 class="section-title mt-4">
                 Experiências e Atendimentos
             </h2>
 
-            <div class="line"></div>
+            <div class="line mt-6"></div>
 
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- CARD -->
+            <div class="service-card bg-[#F7F4EF] p-10 rounded-none">
 
-            <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
-
-                <div class="text-5xl gold-text mb-6">
+                <div class="text-4xl bronze-text mb-6">
                     <i class="fa-solid fa-microphone-lines"></i>
                 </div>
 
-                <h3 class="text-2xl mb-5">
+                <h3 class="text-xl font-medium mb-4 text-[#2B221B]">
                     Palestras Motivacionais
                 </h3>
 
-                <p class="leading-8 text-[#B3907A]">
-
+                <p class="leading-7 text-sm text-[#2B221B]/70 font-light">
                     Palestras transformadoras sobre inteligência emocional,
                     propósito, autoestima e desenvolvimento humano.
-
                 </p>
 
             </div>
 
-            <!-- CARD -->
+            <div class="service-card bg-[#F7F4EF] p-10 rounded-none">
 
-            <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
-
-                <div class="text-5xl gold-text mb-6">
+                <div class="text-4xl bronze-text mb-6">
                     <i class="fa-solid fa-brain"></i>
                 </div>
 
-                <h3 class="text-2xl mb-5">
+                <h3 class="text-xl font-medium mb-4 text-[#2B221B]">
                     Terapia Emocional
                 </h3>
 
-                <p class="leading-8 text-[#B3907A]">
-
+                <p class="leading-7 text-sm text-[#2B221B]/70 font-light">
                     Sessões individuais focadas em cura emocional,
                     desbloqueios internos e fortalecimento pessoal.
-
                 </p>
 
             </div>
 
-            <!-- CARD -->
+            <div class="service-card bg-[#F7F4EF] p-10 rounded-none">
 
-            <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
-
-                <div class="text-5xl gold-text mb-6">
+                <div class="text-4xl bronze-text mb-6">
                     <i class="fa-solid fa-heart"></i>
                 </div>
 
-                <h3 class="text-2xl mb-5">
+                <h3 class="text-xl font-medium mb-4 text-[#2B221B]">
                     Desenvolvimento Pessoal
                 </h3>
 
-                <p class="leading-8 text-[#B3907A]">
-
+                <p class="leading-7 text-sm text-[#2B221B]/70 font-light">
                     Processos voltados ao autoconhecimento,
                     expansão da consciência e evolução pessoal.
-
                 </p>
 
             </div>
 
-            <!-- CARD -->
+            <div class="service-card bg-[#F7F4EF] p-10 rounded-none">
 
-            <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
-
-                <div class="text-5xl gold-text mb-6">
+                <div class="text-4xl bronze-text mb-6">
                     <i class="fa-solid fa-users"></i>
                 </div>
 
-                <h3 class="text-2xl mb-5">
+                <h3 class="text-xl font-medium mb-4 text-[#2B221B]">
                     Mentorias
                 </h3>
 
-                <p class="leading-8 text-[#B3907A]">
-
+                <p class="leading-7 text-sm text-[#2B221B]/70 font-light">
                     Acompanhamentos personalizados para mulheres,
                     profissionais e líderes em busca de transformação.
-
                 </p>
 
             </div>
 
-            <!-- CARD -->
+            <div class="service-card bg-[#F7F4EF] p-10 rounded-none">
 
-            <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
-
-                <div class="text-5xl gold-text mb-6">
+                <div class="text-4xl bronze-text mb-6">
                     <i class="fa-solid fa-spa"></i>
                 </div>
 
-                <h3 class="text-2xl mb-5">
+                <h3 class="text-xl font-medium mb-4 text-[#2B221B]">
                     Vivências Terapêuticas
                 </h3>
 
-                <p class="leading-8 text-[#B3907A]">
-
+                <p class="leading-7 text-sm text-[#2B221B]/70 font-light">
                     Experiências profundas de reconexão,
                     espiritualidade, equilíbrio e cura interior.
-
                 </p>
 
             </div>
 
-            <!-- CARD -->
+            <div class="service-card bg-[#F7F4EF] p-10 rounded-none">
 
-            <div class="service-card bg-white p-10 rounded-[35px] shadow-lg">
-
-                <div class="text-5xl gold-text mb-6">
+                <div class="text-4xl bronze-text mb-6">
                     <i class="fa-solid fa-award"></i>
                 </div>
 
-                <h3 class="text-2xl mb-5">
+                <h3 class="text-xl font-medium mb-4 text-[#2B221B]">
                     Eventos Premium
                 </h3>
 
-                <p class="leading-8 text-[#B3907A]">
-
+                <p class="leading-7 text-sm text-[#2B221B]/70 font-light">
                     Participação em congressos, eventos corporativos,
                     retiros e encontros exclusivos de alto impacto.
-
                 </p>
 
             </div>
@@ -658,59 +557,42 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================================
-     PALESTRAS
-========================================================= -->
-
-<section id="palestras" class="py-28 bg-[#B3907A] text-white">
+<section id="palestras" class="py-28 bg-[#2B221B] text-white">
 
     <div class="max-w-6xl mx-auto px-6 text-center">
 
-        <span class="uppercase tracking-[5px] text-[#F5F5EB]">
-            Impacto
+        <span class="uppercase text-xs font-semibold tracking-[0.2em] text-[#B08A5B]">
+            Impacto Institucional
         </span>
 
-        <h2 class="section-title mt-5 text-white">
-
+        <h2 class="section-title mt-4 text-white">
             Palestras que inspiram transformação.
-
         </h2>
 
-        <div class="line" style="background: var(--white);"></div>
+        <div class="line my-6" style="background: var(--bronze);"></div>
 
-        <p class="max-w-4xl mx-auto text-lg leading-9 text-[#E1DACA] mt-10">
-
+        <p class="max-w-3xl mx-auto text-base md:text-lg leading-8 text-white/70 font-light">
             Uma comunicação elegante, humana e impactante,
             levando mensagens de superação, inteligência emocional,
             propósito de vida e transformação interior para empresas,
             mulheres, eventos e instituições.
-
         </p>
 
         <div class="grid md:grid-cols-3 gap-8 mt-20">
 
-            <div class="glass p-10 rounded-[30px]">
-
-                <h3 class="text-5xl text-white mb-3">+100</h3>
-
-                <p class="text-[#E1DACA]">Atendimentos e experiências transformadoras</p>
-
+            <div class="glass p-10 rounded-none">
+                <h3 class="text-4xl font-light text-[#B08A5B] mb-2">+100</h3>
+                <p class="text-xs tracking-wider text-white/80 font-light uppercase">Atendimentos de Alto Padrão</p>
             </div>
 
-            <div class="glass p-10 rounded-[30px]">
-
-                <h3 class="text-5xl text-white mb-3">Premium</h3>
-
-                <p class="text-[#E1DACA]">Posicionamento sofisticado e humanizado</p>
-
+            <div class="glass p-10 rounded-none">
+                <h3 class="text-4xl font-light text-[#B08A5B] mb-2">Premium</h3>
+                <p class="text-xs tracking-wider text-white/80 font-light uppercase">Posicionamento Sofisticado</p>
             </div>
 
-            <div class="glass p-10 rounded-[30px]">
-
-                <h3 class="text-5xl text-white mb-3">Alto Impacto</h3>
-
-                <p class="text-[#E1DACA]">Palestras e mentorias inspiradoras</p>
-
+            <div class="glass p-10 rounded-none">
+                <h3 class="text-4xl font-light text-[#B08A5B] mb-2">Impacto</h3>
+                <p class="text-xs tracking-wider text-white/80 font-light uppercase">Palestras e Mentorias Globais</p>
             </div>
 
         </div>
@@ -719,29 +601,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================================
-     CTA
-========================================================= -->
-
-<section class="py-28 bg-[#C1B6A3]">
+<section class="py-24 bg-[#B08A5B]">
 
     <div class="max-w-5xl mx-auto px-6 text-center">
 
-        <h2 class="text-4xl md:text-6xl text-[#B3907A] leading-tight">
-
+        <h2 class="text-3xl md:text-5xl text-[#2B221B] font-light tracking-wide uppercase">
             Sua transformação começa agora.
-
         </h2>
 
-        <p class="text-xl mt-8 text-[#5d5752] leading-9">
-
-            Agende um atendimento, palestra ou mentoria personalizada.
-
+        <p class="text-base mt-6 text-[#2B221B]/90 font-light">
+            Agende um atendimento, palestra ou mentoria personalizada com o KNT Instituto.
         </p>
 
         <a href="https://wa.me/553196477862"
         target="_blank"
-        class="inline-block mt-10 px-10 py-5 bg-[#B3907A] text-white rounded-full tracking-[3px] hover:scale-105 duration-300">
+        class="inline-block mt-10 px-10 py-4 bg-[#2B221B] text-white text-xs tracking-[0.2em] font-medium hover:scale-105 duration-300">
 
             FALAR NO WHATSAPP
 
@@ -751,25 +625,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================================
-     CONTATO
-========================================================= -->
-
-<section id="contato" class="py-24 bg-[#F5F5EB]">
+<section id="contato" class="py-24 bg-[#F7F4EF]">
 
     <div class="max-w-6xl mx-auto px-6">
 
         <div class="text-center mb-16">
 
-            <span class="uppercase tracking-[5px] text-[#B3907A]">
+            <span class="uppercase text-xs font-semibold tracking-[0.2em] text-[#B08A5B]">
                 Contato
             </span>
 
-            <h2 class="section-title mt-5">
+            <h2 class="section-title mt-4">
                 Vamos conversar.
             </h2>
 
-            <div class="line mb-10"></div>
+            <div class="line mt-6"></div>
 
         </div>
 
@@ -777,17 +647,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
             <a href="https://wa.me/553196477862"
             target="_blank"
-            class="bg-white rounded-[30px] p-10 text-center shadow-lg hover:-translate-y-2 duration-300">
+            class="bg-white rounded-none p-10 text-center shadow-sm border border-black/[0.03] hover:-translate-y-1 duration-300">
 
-                <div class="text-5xl gold-text mb-6">
+                <div class="text-4xl bronze-text mb-5">
                     <i class="fa-brands fa-whatsapp"></i>
                 </div>
 
-                <h3 class="text-2xl mb-4">
+                <h3 class="text-lg font-medium mb-2 text-[#2B221B]">
                     WhatsApp
                 </h3>
 
-                <p class="text-[#B3907A]">
+                <p class="text-sm text-[#2B221B]/70 font-light">
                     (31) 96477-7862
                 </p>
 
@@ -795,17 +665,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
             <a href="https://www.instagram.com/nagylatravagliaoficial?igsh=NG5pNzcwMjVjYXc3"
             target="_blank"
-            class="bg-white rounded-[30px] p-10 text-center shadow-lg hover:-translate-y-2 duration-300">
+            class="bg-white rounded-none p-10 text-center shadow-sm border border-black/[0.03] hover:-translate-y-1 duration-300">
 
-                <div class="text-5xl gold-text mb-6">
+                <div class="text-4xl bronze-text mb-5">
                     <i class="fa-brands fa-instagram"></i>
                 </div>
 
-                <h3 class="text-2xl mb-4">
+                <h3 class="text-lg font-medium mb-2 text-[#2B221B]">
                     Instagram
                 </h3>
 
-                <p class="text-[#B3907A]">
+                <p class="text-sm text-[#2B221B]/70 font-light">
                     @nagylatravagliaoficial
                 </p>
 
@@ -813,17 +683,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
             <a href="https://linktr.ee/Nagylatravaglia"
             target="_blank"
-            class="bg-white rounded-[30px] p-10 text-center shadow-lg hover:-translate-y-2 duration-300">
+            class="bg-white rounded-none p-10 text-center shadow-sm border border-black/[0.03] hover:-translate-y-1 duration-300">
 
-                <div class="text-5xl gold-text mb-6">
+                <div class="text-4xl bronze-text mb-5">
                     <i class="fa-solid fa-link"></i>
                 </div>
 
-                <h3 class="text-2xl mb-4">
+                <h3 class="text-lg font-medium mb-2 text-[#2B221B]">
                     Linktree
                 </h3>
 
-                <p class="text-[#B3907A]">
+                <p class="text-sm text-[#2B221B]/70 font-light">
                     Acessar Links Oficiais
                 </p>
 
@@ -835,57 +705,37 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </section>
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer class="bg-[#B3907A] py-10 text-center text-[#E1DACA]">
+<footer class="bg-[#2B221B] py-14 text-center text-white/60">
 
     <div class="max-w-7xl mx-auto px-6">
 
-        <h3 class="text-2xl text-white tracking-[4px]">
-
-            NAGYLA TRAVAGLIA
-
+        <h3 class="text-xl text-white tracking-[0.25em] font-light">
+            KNT INSTITUTO
         </h3>
 
-        <p class="mt-5">
-
+        <p class="mt-3 text-xs tracking-wider text-[#B08A5B] uppercase font-light">
             Palestrante • Terapeuta • Mentora
-
         </p>
 
-        <div class="flex justify-center gap-8 mt-8 text-2xl">
+        <div class="flex justify-center gap-6 mt-8 text-xl">
 
-            <a href="https://www.instagram.com/nagylatravagliaoficial?igsh=NG5pNzcwMjVjYXc3"
-            target="_blank">
-
+            <a href="https://www.instagram.com/nagylatravagliaoficial?igsh=NG5pNzcwMjVjYXc3" target="_blank" class="hover:text-white">
                 <i class="fa-brands fa-instagram"></i>
-
             </a>
 
-            <a href="https://wa.me/553196477862"
-            target="_blank">
-
+            <a href="https://wa.me/553196477862" target="_blank" class="hover:text-white">
                 <i class="fa-brands fa-whatsapp"></i>
-
             </a>
 
         </div>
 
-        <p class="mt-10 text-sm">
-
-            © 2026 Nagyla Travaglia — Todos os direitos reservados.
-
+        <p class="mt-12 text-xs tracking-wide text-white/40 font-light">
+            © 2026 KNT Instituto — Todos os direitos reservados.
         </p>
 
     </div>
 
 </footer>
-
-<!-- =========================================================
-     BOTÃO WHATSAPP
-========================================================= -->
 
 <div class="whatsapp-float">
 
