@@ -333,7 +333,63 @@ footer a:hover{
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-        <!-- TEXTO -->
+        <!-- TEXTO --><div class="flex justify-center md:justify-end w-full">
+    <div class="relative w-full max-w-[380px] rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 group">
+        
+        <video
+            id="meuVideo"
+            playsinline
+            style="width: 100%; height: auto; display: block; object-fit: cover; transform: scale(1.35); transform-origin: center;"
+            class="w-full">
+            
+            <source src="images/palestra4.mp4" type="video/mp4">
+            
+        </video>
+
+        <button 
+            id="btnPlay"
+            class="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 hover:bg-black/20 z-10">
+            <div class="w-16 h-16 flex items-center justify-center bg-white text-black rounded-full shadow-xl transform transition hover:scale-110 pl-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </div>
+        </button>
+
+    </div>
+</div>
+
+<script>
+    const video = document.getElementById('meuVideo');
+    const btnPlay = document.getElementById('btnPlay');
+
+    video.loop = false;
+
+    btnPlay.addEventListener('click', function() {
+        // 1. Ativa os controles nativos (barra de volume, tempo) APENAS agora que deu play
+        video.controls = true;
+        // 2. Começa o vídeo com som
+        video.play();
+        // 3. Some com o nosso botão
+        btnPlay.style.setProperty('display', 'none', 'important');
+    });
+
+    // Se o usuário pausar manualmente pelos controles que apareceram
+    video.addEventListener('pause', function() {
+        if (!video.ended) {
+            // Remove os controles para o botão nativo do celular não brotar de novo
+            video.controls = false;
+            // Mostra o nosso botão personalizado
+            btnPlay.style.display = 'flex';
+        }
+    });
+
+    // Quando o vídeo terminar, remove os controles e garante o fim do loop
+    video.addEventListener('ended', function() {
+        video.controls = false;
+        video.pause();
+    });
+</script>
         <div>
 
             <span class="hero-subtitle">
