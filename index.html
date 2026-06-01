@@ -371,8 +371,10 @@ footer a:hover{
         </div>
 
 <div class="flex justify-center md:justify-end w-full">
-    <div class="w-full max-w-[380px] rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-white/10">
+    <div class="relative w-full max-w-[380px] rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 group">
+        
         <video
+            id="meuVideo"
             loop
             controls
             playsinline
@@ -382,7 +384,36 @@ footer a:hover{
             <source src="images/palestra4.mp4" type="video/mp4">
             
         </video>
+
+        <button 
+            id="btnPlay"
+            class="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 hover:bg-black/20 z-10">
+            <div class="w-16 h-16 flex items-center justify-center bg-white text-black rounded-full shadow-xl transform transition hover:scale-110 pl-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </div>
+        </button>
+
     </div>
+</div>
+
+<script>
+    const video = document.getElementById('meuVideo');
+    const btnPlay = document.getElementById('btnPlay');
+
+    btnPlay.addEventListener('click', function() {
+        // Dá o play no vídeo (com som liberado pelo clique)
+        video.play();
+        // Esconde o botão de play
+        btnPlay.style.setProperty('display', 'none', 'important');
+    });
+
+    // Se o usuário pausar o vídeo direto nos controles nativos, o botão reaparece
+    video.addEventListener('pause', function() {
+        btnPlay.style.display = 'flex';
+    });
+</script>
 </div>
 </div>
 
