@@ -376,6 +376,9 @@ footer a:hover{
        <div class="flex justify-center md:justify-end w-full">
     <div class="relative w-full max-w-[380px] rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 group">
         
+   <div class="flex justify-center md:justify-end w-full">
+    <div class="relative w-full max-w-[380px] rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 group">
+        
         <video
             id="meuVideo"
             controls
@@ -404,17 +407,25 @@ footer a:hover{
     const video = document.getElementById('meuVideo');
     const btnPlay = document.getElementById('btnPlay');
 
+    // Força o navegador a saber que o loop está desligado por código
+    video.loop = false;
+
     btnPlay.addEventListener('click', function() {
         video.play();
         btnPlay.style.setProperty('display', 'none', 'important');
     });
 
-    // O botão reaparece APENAS se o usuário pausar manualmente no meio do vídeo
+    // Se o usuário pausar no meio do vídeo, o botão aparece
     video.addEventListener('pause', function() {
-        // Se o vídeo terminou, não mostra o botão de play no meio da tela
         if (!video.ended) {
             btnPlay.style.display = 'flex';
         }
+    });
+
+    // BLOQUEIO SEGURO: Quando o vídeo terminar, força a pausa definitiva
+    video.addEventListener('ended', function() {
+        video.pause();
+        console.log("Vídeo encerrado, loop bloqueado.");
     });
 </script>
 </div>
