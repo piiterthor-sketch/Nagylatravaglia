@@ -373,9 +373,11 @@ footer a:hover{
 <div class="flex justify-center md:justify-end w-full">
     <div class="relative w-full max-w-[380px] rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 group">
         
+       <div class="flex justify-center md:justify-end w-full">
+    <div class="relative w-full max-w-[380px] rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 group">
+        
         <video
             id="meuVideo"
-            loop
             controls
             playsinline
             style="width: 100%; height: auto; display: block; object-fit: cover; transform: scale(1.35); transform-origin: center;"
@@ -403,15 +405,16 @@ footer a:hover{
     const btnPlay = document.getElementById('btnPlay');
 
     btnPlay.addEventListener('click', function() {
-        // Dá o play no vídeo (com som liberado pelo clique)
         video.play();
-        // Esconde o botão de play
         btnPlay.style.setProperty('display', 'none', 'important');
     });
 
-    // Se o usuário pausar o vídeo direto nos controles nativos, o botão reaparece
+    // O botão reaparece APENAS se o usuário pausar manualmente no meio do vídeo
     video.addEventListener('pause', function() {
-        btnPlay.style.display = 'flex';
+        // Se o vídeo terminou, não mostra o botão de play no meio da tela
+        if (!video.ended) {
+            btnPlay.style.display = 'flex';
+        }
     });
 </script>
 </div>
