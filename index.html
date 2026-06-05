@@ -447,27 +447,51 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
 const video = document.getElementById('meuVideo');
 const btnPlay = document.getElementById('btnPlay');
 
+// Play e Pause ao clicar no botão
 btnPlay.addEventListener('click', () => {
-    video.play();
-    btnPlay.classList.add('hidden');
-});
 
-video.addEventListener('pause', () => {
-    if (!video.ended) {
+    if(video.paused){
+        video.play();
+        btnPlay.classList.add('hidden');
+    }else{
+        video.pause();
         btnPlay.classList.remove('hidden');
     }
+
 });
 
+// Permite pausar clicando diretamente no vídeo
+video.addEventListener('click', () => {
+
+    if(video.paused){
+        video.play();
+        btnPlay.classList.add('hidden');
+    }else{
+        video.pause();
+        btnPlay.classList.remove('hidden');
+    }
+
+});
+
+// Quando pausar mostra o botão
+video.addEventListener('pause', () => {
+
+    if(!video.ended){
+        btnPlay.classList.remove('hidden');
+    }
+
+});
+
+// Quando terminar volta para o início
 video.addEventListener('ended', () => {
-    video.currentTime = 0;      // volta para o início
-    video.load();               // recarrega o primeiro frame
+
+    video.currentTime = 0;
+    video.pause();
+
     btnPlay.classList.remove('hidden');
+
 });
 </script>
-</div>
-</div>
-
-   
 
 </section>
 
