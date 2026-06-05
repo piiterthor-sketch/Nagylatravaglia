@@ -370,16 +370,29 @@ footer a:hover{
         </div> 
 
 <div class="flex justify-center md:justify-end w-full">
-    <div class="relative w-full max-w-[320px] md:max-w-[420px] aspect-[9/16] rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 group">
+    <div class="relative w-full max-w-[420px] aspect-[9/16] rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-black group">
 
         <video
             id="meuVideo"
             playsinline
             class="w-full h-full object-cover">
-
             <source src="images/video.mp4" type="video/mp4">
-
         </video>
+
+        <button
+            id="btnPlay"
+            class="absolute inset-0 flex items-center justify-center bg-black/40 transition-all duration-300 hover:bg-black/20 z-10">
+
+            <div class="w-16 h-16 flex items-center justify-center bg-white text-black rounded-full shadow-xl hover:scale-110 transition-transform pl-1">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="currentColor"
+                     viewBox="0 0 24 24"
+                     class="w-8 h-8">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </div>
+
+        </button>
 
     </div>
 </div>
