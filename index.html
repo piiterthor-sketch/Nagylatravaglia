@@ -49,6 +49,7 @@
         color: var(--ok-chocolate);
         -webkit-font-smoothing: antialiased;
         position: relative;
+        
       }
 
       /* Títulos Editoriais */
@@ -99,6 +100,13 @@
         animation-fill-mode: both;
         animation-range: entry 10% cover 40%;
       }
+      html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 120px;
+}
 
       /* Efeito de Link Editorial */
       .link-hover-effect {
@@ -137,14 +145,15 @@
     </style>
   </head>
   <body class="selection:bg-[oklch(0.67_0.09_72)] selection:text-white">
+    <body id="topo" class="selection:bg-[oklch(0.67_0.09_72)] selection:text-white"></body>
     <header
       id="mainHeader"
-      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 bg-transparent"
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 bg-transparent"
     >
       <div
         class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"
       >
-        <a href="#" class="inline-block">
+       <a href="#topo" class="inline-block">
           <img
             src="images/nagyla5.png"
             alt="KNT Instituto"
@@ -227,7 +236,7 @@
     </header>
 
     <section
-      class="hero-parallax-bg relative min-height-[100vh] flex items-center pt-40 pb-24 md:py-0 md:h-screen overflow-hidden"
+      class="hero-parallax-bg relative min-h-screen flex items-center pt-40 pb-24 md:py-0 md:h-screen overflow-hidden"
     >
       <div
         class="absolute inset-0 bg-gradient-to-t from-[oklch(0.21_0.02_35)] via-transparent to-transparent opacity-80"
@@ -283,7 +292,7 @@
 
         <div class="md:col-span-5 flex justify-center md:justify-end w-full">
           <div
-            class="relative w-full max-w-[340px] aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group group"
+           class="relative w-full max-w-[340px] aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group"
           >
             <video
               id="meuVideo"
@@ -395,6 +404,25 @@
         </div>
       </div>
     </section>
+
+   <section id="servicos" class="py-32 bg-white scroll-reveal">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <div class="text-center max-w-2xl mx-auto space-y-4 mb-20">
+      <span
+        class="text-[oklch(0.67_0.09_72)] text-xs font-semibold tracking-[0.25em] uppercase block"
+      >
+        Portfólio de Soluções
+      </span>
+
+      <h2
+        class="editorial-title text-4xl sm:text-5xl text-[oklch(0.21_0.02_35)]"
+      >
+        Experiências & Mentorias Premium
+      </h2>
+
+      <div class="w-16 h-[1px] bg-[oklch(0.67_0.09_72)] mx-auto"></div>
+    </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- 1 -->
@@ -571,6 +599,9 @@
         </span>
       </div>
     </div>
+        </div>
+  </div>
+</section>
     <section
       id="palestras"
       class="py-32 bg-[oklch(0.21_0.02_35)] text-white relative overflow-hidden scroll-reveal"
@@ -750,9 +781,13 @@
           header.classList.add("glass-header", "shadow-xl");
           header.classList.remove("py-6", "bg-transparent");
           header.classList.add("py-4");
+          header.classList.remove("glass-header", "shadow-xl", "py-3");
+header.classList.add("py-4", "bg-transparent");
         } else {
           header.classList.remove("glass-header", "shadow-xl", "py-4");
           header.classList.add("py-6", "bg-transparent");
+          header.classList.remove("glass-header", "shadow-xl", "py-3");
+header.classList.add("py-4", "bg-transparent");
         }
       });
 
@@ -761,6 +796,14 @@
       const mobileMenu = document.getElementById("mobileMenu");
       mobileBtn.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
+        document.addEventListener("click", (e) => {
+  if (
+    !mobileMenu.contains(e.target) &&
+    !mobileBtn.contains(e.target)
+  ) {
+    mobileMenu.classList.add("hidden");
+  }
+});
       });
 
       document.querySelectorAll(".mobile-link").forEach((link) => {
