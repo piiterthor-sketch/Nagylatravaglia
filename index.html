@@ -75,7 +75,7 @@
       .glass-header {
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        background: oklch(0.21 0.02 35 / 0.75);
+        background: oklch(0.21 0.02 35 / 0.85) !important;
         transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
@@ -104,7 +104,7 @@
       }
 
       section[id] {
-        scroll-margin-top: 120px;
+        scroll-margin-top: 100px;
       }
 
       /* Efeito de Link Editorial */
@@ -137,9 +137,15 @@
             oklch(0.21 0.02 35)
           ),
           url("images/palestran.png");
-        background-attachment: fixed;
+        background-attachment: scroll;
         background-size: cover;
         background-position: center;
+      }
+      
+      @media (min-width: 768px) {
+        .hero-parallax-bg {
+          background-attachment: fixed;
+        }
       }
     </style>
   </head>
@@ -158,7 +164,7 @@
           <img
             src="images/nagyla5.png"
             alt="KNT Instituto"
-            class="w-20 md:w-24 h-auto object-contain transition-all duration-300"
+            class="w-16 md:w-24 h-auto object-contain transition-all duration-300"
           />
         </a>
 
@@ -187,9 +193,17 @@
           >
         </nav>
 
+        <button 
+          id="mobileMenuBtn" 
+          class="block md:hidden text-white hover:text-[oklch(0.67_0.09_72)] text-xl focus:outline-none transition-colors"
+          aria-label="Abrir menu móvel"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
         <div
           id="mobileMenu"
-          class="hidden fixed inset-x-0 top-[80px] bg-[oklch(0.15_0.02_35_/_0.98)] backdrop-blur-xl border-t border-white/5 transition-all duration-300"
+          class="hidden fixed inset-x-0 top-[72px] bg-[oklch(0.15_0.02_35_/_0.98)] backdrop-blur-xl border-t border-white/5 transition-all duration-300"
         >
           <nav
             class="flex flex-col text-center py-8 text-white uppercase tracking-[0.2em] text-xs space-y-6"
@@ -220,7 +234,7 @@
     </header>
 
     <section
-      class="hero-parallax-bg relative min-h-screen flex items-center pt-40 pb-24 md:py-0 md:h-screen overflow-hidden"
+      class="hero-parallax-bg relative min-h-screen flex items-center pt-32 pb-20 md:py-0 md:h-screen overflow-hidden"
     >
       <div
         class="absolute inset-0 bg-gradient-to-t from-[oklch(0.21_0.02_35)] via-transparent to-transparent opacity-80"
@@ -229,7 +243,7 @@
       <div
         class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full grid md:grid-cols-12 gap-12 items-center"
       >
-        <div class="md:col-span-7 text-left space-y-6">
+        <div class="md:col-span-7 text-left space-y-6 mt-8 md:mt-0">
           <div class="inline-flex items-center gap-3">
             <span class="w-12 h-[1px] bg-[oklch(0.67_0.09_72)]"></span>
             <span
@@ -242,7 +256,7 @@
           <h1
             class="editorial-title text-4xl sm:text-5xl lg:text-7xl text-white leading-[1.1] font-light"
           >
-            Transformando conhecimento em identidade . <br /><span
+            Transformando conhecimento em identidade. <br class="hidden sm:inline" /><span
               class="italic text-[oklch(0.67_0.09_72)] font-serif"
               >posicionamento e legado</span
             >
@@ -260,14 +274,14 @@
             <a
               href="https://wa.me/5531972565641"
               target="_blank"
-              class="px-8 py-4 bg-[oklch(0.67_0.09_72)] text-white text-[11px] tracking-[0.2em] font-medium uppercase transition-all duration-300 hover:bg-white hover:text-[oklch(0.21_0.02_35)] shadow-lg shadow-black/10"
+              class="px-6 py-4 md:px-8 bg-[oklch(0.67_0.09_72)] text-white text-[11px] tracking-[0.2em] font-medium uppercase transition-all duration-300 hover:bg-white hover:text-[oklch(0.21_0.02_35)] shadow-lg shadow-black/10 text-center w-full sm:w-auto"
             >
               Atendimento Premium
             </a>
             <a
               href="https://www.instagram.com/nagylatravagliaoficial?igsh=NG5pNzcwMjVjYXc3"
               target="_blank"
-              class="px-8 py-4 border border-white/20 text-white text-[11px] tracking-[0.2em] font-medium uppercase transition-all duration-300 hover:bg-white/10"
+              class="px-6 py-4 md:px-8 border border-white/20 text-white text-[11px] tracking-[0.2em] font-medium uppercase transition-all duration-300 hover:bg-white/10 text-center w-full sm:w-auto"
             >
               Siga no Instagram
             </a>
@@ -275,10 +289,10 @@
         </div>
 
         <div
-          class="md:col-span-5 flex justify-center md:justify-end w-full mt-12 md:mt-24"
+          class="md:col-span-5 flex justify-center md:justify-end w-full mt-6 md:mt-24"
         >
           <div
-            class="relative w-full max-w-[340px] aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group"
+            class="relative w-full max-w-[280px] sm:max-w-[340px] aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group"
           >
             <video
               id="meuVideo"
@@ -314,32 +328,32 @@
       </div>
     </section>
 
-    <section id="sobre" class="py-32 bg-[oklch(0.97_0.01_60)] scroll-reveal">
+    <section id="sobre" class="py-20 md:py-32 bg-[oklch(0.97_0.01_60)] scroll-reveal">
       <div
-        class="max-w-7xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-16 items-center"
+        class="max-w-7xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-12 md:gap-16 items-center"
       >
-        <div class="md:col-span-5 relative">
+        <div class="md:col-span-5 relative order-2 md:order-1">
           <div
-            class="absolute -inset-4 border border-[oklch(0.67_0.09_72)]/30 translate-x-8 translate-y-8 pointer-events-none rounded-sm"
+            class="absolute -inset-4 border border-[oklch(0.67_0.09_72)]/30 translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8 pointer-events-none rounded-sm"
           ></div>
           <div class="overflow-hidden rounded-sm shadow-2xl">
             <div class="rounded-2xl overflow-hidden">
               <img
                 src="images/nagilakil2.jpeg"
-                class="w-full h-[550px] object-cover hover:scale-105 transition-transform duration-700"
+                class="w-full h-[400px] md:h-[550px] object-cover hover:scale-105 transition-transform duration-700"
                 alt="Nagyla Travaglia - KNT Instituto"
               />
             </div>
           </div>
         </div>
 
-        <div class="md:col-span-7 space-y-6">
+        <div class="md:col-span-7 space-y-6 order-1 md:order-2">
           <span
             class="text-[oklch(0.67_0.09_72)] text-xs font-semibold tracking-[0.25em] uppercase block"
             >Sobre o Instituto</span
           >
           <h2
-            class="editorial-title text-4xl sm:text-5xl text-[oklch(0.21_0.02_35)] leading-[1.2]"
+            class="editorial-title text-3xl sm:text-5xl text-[oklch(0.21_0.02_35)] leading-[1.2]"
           >
             Uma trajetória moldada por <br /><span class="italic font-serif"
               >propósito e refinamento.</span
@@ -366,29 +380,29 @@
           </div>
 
           <div
-            class="grid grid-cols-3 gap-6 pt-6 border-t border-[oklch(0.21_0.02_35)]/10 text-center md:text-left"
+            class="grid grid-cols-3 gap-4 md:grid-cols-3 md:gap-6 pt-6 border-t border-[oklch(0.21_0.02_35)]/10 text-center md:text-left"
           >
             <div>
-              <h4 class="editorial-title text-2xl text-[oklch(0.67_0.09_72)]">
+              <h4 class="editorial-title text-xl md:text-2xl text-[oklch(0.67_0.09_72)]">
                 Visão
               </h4>
-              <p class="text-xs text-[oklch(0.21_0.02_35)]/60 font-light mt-1">
-                Expandir horizontes de liderança.
+              <p class="text-[11px] text-[oklch(0.21_0.02_35)]/60 font-light mt-1">
+                Expandir horizontes.
               </p>
             </div>
             <div>
-              <h4 class="editorial-title text-2xl text-[oklch(0.67_0.09_72)]">
+              <h4 class="editorial-title text-xl md:text-2xl text-[oklch(0.67_0.09_72)]">
                 Ação
               </h4>
-              <p class="text-xs text-[oklch(0.21_0.02_35)]/60 font-light mt-1">
-                Mudanças reais e pragmáticas.
+              <p class="text-[11px] text-[oklch(0.21_0.02_35)]/60 font-light mt-1">
+                Mudanças pragmáticas.
               </p>
             </div>
             <div>
-              <h4 class="editorial-title text-2xl text-[oklch(0.67_0.09_72)]">
+              <h4 class="editorial-title text-xl md:text-2xl text-[oklch(0.67_0.09_72)]">
                 Impacto
               </h4>
-              <p class="text-xs text-[oklch(0.21_0.02_35)]/60 font-light mt-1">
+              <p class="text-[11px] text-[oklch(0.21_0.02_35)]/60 font-light mt-1">
                 Resultados duradouros.
               </p>
             </div>
@@ -397,16 +411,16 @@
       </div>
     </section>
 
-    <section id="servicos" class="py-32 bg-white scroll-reveal">
+    <section id="servicos" class="py-20 md:py-32 bg-white scroll-reveal">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <div class="text-center max-w-2xl mx-auto space-y-4 mb-20">
+        <div class="text-center max-w-2xl mx-auto space-y-4 mb-16 md:mb-20">
           <span
             class="text-[oklch(0.67_0.09_72)] text-xs font-semibold tracking-[0.25em] uppercase block"
           >
             Portfólio de Soluções
           </span>
           <h2
-            class="editorial-title text-4xl sm:text-5xl text-[oklch(0.21_0.02_35)]"
+            class="editorial-title text-3xl sm:text-5xl text-[oklch(0.21_0.02_35)]"
           >
             Experiências & Mentorias Premium
           </h2>
@@ -415,170 +429,115 @@
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
-            class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
+            class="group bg-[oklch(0.97_0.01_60)] p-8 md:p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between min-h-[300px] md:h-[320px] shadow-sm hover:shadow-2xl"
           >
             <div>
-              <div
-                class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
-              >
+              <div class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white">
                 <i class="fa-solid fa-users-viewfinder"></i>
               </div>
-              <h3
-                class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
-              >
+              <h3 class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white">
                 Mentoria Estratégica
               </h3>
-              <p
-                class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
-              >
-                Acompanhamento individualizado de alto padrão, focado em
-                acelerar resultados e alinhar o seu posicionamento pessoal e
-                profissional.
+              <p class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed">
+                Acompanhamento individualizado de alto padrão, focado em acelerar resultados e alinhar o seu posicionamento pessoal e profissional.
               </p>
             </div>
-            <span
-              class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
-            >
+            <span class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4 block">
               Saber Mais →
             </span>
           </div>
 
           <div
-            class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
+            class="group bg-[oklch(0.97_0.01_60)] p-8 md:p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between min-h-[300px] md:h-[320px] shadow-sm hover:shadow-2xl"
           >
             <div>
-              <div
-                class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
-              >
+              <div class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white">
                 <i class="fa-solid fa-microphone-lines"></i>
               </div>
-              <h3
-                class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
-              >
+              <h3 class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white">
                 Palestras de Alto Impacto
               </h3>
-              <p
-                class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
-              >
-                Conteúdos inspiradores que despertam liderança, propósito e
-                inteligência emocional para eventos, empresas e convenções.
+              <p class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed">
+                Conteúdos inspiradores que despertam liderança, propósito e inteligência emocional para eventos, empresas e convenções.
               </p>
             </div>
-            <span
-              class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
-            >
+            <span class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4 block">
               Saber Mais →
             </span>
           </div>
 
           <div
-            class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
+            class="group bg-[oklch(0.97_0.01_60)] p-8 md:p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between min-h-[300px] md:h-[320px] shadow-sm hover:shadow-2xl"
           >
             <div>
-              <div
-                class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
-              >
+              <div class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white">
                 <i class="fa-solid fa-building-user"></i>
               </div>
-              <h3
-                class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
-              >
+              <h3 class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white">
                 Treinamentos Corporativos
               </h3>
-              <p
-                class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
-              >
-                Desenvolvimento de equipes e lideranças por meio de metodologias
-                focadas em desempenho, comunicação e engajamento.
+              <p class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed">
+                Desenvolvimento de equipes e lideranças por meio de metodologias focadas em desempenho, comunicação e engajamento.
               </p>
             </div>
-            <span
-              class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
-            >
+            <span class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4 block">
               Saber Mais →
             </span>
           </div>
 
           <div
-            class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
+            class="group bg-[oklch(0.97_0.01_60)] p-8 md:p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between min-h-[300px] md:h-[320px] shadow-sm hover:shadow-2xl"
           >
             <div>
-              <div
-                class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
-              >
+              <div class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white">
                 <i class="fa-solid fa-gem"></i>
               </div>
-              <h3
-                class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
-              >
+              <h3 class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white">
                 Estratégia de Imagem
               </h3>
-              <p
-                class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
-              >
-                Construção de uma identidade autêntica e coerente, fortalecendo
-                sua presença e autoridade no mercado.
+              <p class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed">
+                Construção de uma identidade autêntica e coerente, fortalecendo sua presença e autoridade no mercado.
               </p>
             </div>
-            <span
-              class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
-            >
+            <span class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4 block">
               Saber Mais →
             </span>
           </div>
 
           <div
-            class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
+            class="group bg-[oklch(0.97_0.01_60)] p-8 md:p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between min-h-[300px] md:h-[320px] shadow-sm hover:shadow-2xl"
           >
             <div>
-              <div
-                class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
-              >
+              <div class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white">
                 <i class="fa-solid fa-brain"></i>
               </div>
-              <h3
-                class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
-              >
+              <h3 class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white">
                 Terapia e Cura Emocional
               </h3>
-              <p
-                class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
-              >
-                Processos terapêuticos voltados para o equilíbrio emocional,
-                fortalecimento interno e transformação de padrões limitantes.
+              <p class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed">
+                Processos terapêuticos voltados para o equilíbrio emocional, fortalecimento interno e transformação de padrões limitantes.
               </p>
             </div>
-            <span
-              class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
-            >
+            <span class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4 block">
               Saber Mais →
             </span>
           </div>
 
           <div
-            class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
+            class="group bg-[oklch(0.97_0.01_60)] p-8 md:p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between min-h-[300px] md:h-[320px] shadow-sm hover:shadow-2xl"
           >
             <div>
-              <div
-                class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
-              >
+              <div class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white">
                 <i class="fa-solid fa-crown"></i>
               </div>
-              <h3
-                class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
-              >
+              <h3 class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white">
                 Imersão de Alta Performance
               </h3>
-              <p
-                class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
-              >
-                Experiência exclusiva para desenvolver liderança, inteligência
-                emocional, clareza estratégica e excelência em resultados.
+              <p class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed">
+                Experiência exclusiva para desenvolver liderança, inteligência emocional, clareza estratégica e excelência em resultados.
               </p>
             </div>
-            <span
-              class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
-            >
+            <span class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4 block">
               Saber Mais →
             </span>
           </div>
@@ -588,7 +547,7 @@
 
     <section
       id="palestras"
-      class="py-32 bg-[oklch(0.21_0.02_35)] text-white relative overflow-hidden scroll-reveal"
+      class="py-20 md:py-32 bg-[oklch(0.21_0.02_35)] text-white relative overflow-hidden scroll-reveal"
     >
       <div
         class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_oklch(0.67_0.09_72_/_0.15),_transparent_45%)]"
@@ -599,7 +558,7 @@
           class="text-[oklch(0.67_0.09_72)] text-xs font-semibold tracking-[0.3em] uppercase block"
           >Impacto Mensurável</span
         >
-        <h2 class="editorial-title text-4xl sm:text-5xl text-white">
+        <h2 class="editorial-title text-3xl sm:text-5xl text-white">
           Comunicação Sofisticada, Mensagem Transformadora.
         </h2>
         <div class="w-20 h-[1px] bg-[oklch(0.67_0.09_72)] mx-auto"></div>
@@ -612,46 +571,34 @@
           e intimista.
         </p>
 
-        <div class="grid sm:grid-cols-3 gap-6 pt-16">
+        <div class="grid sm:grid-cols-3 gap-6 pt-12 md:pt-16">
           <div
-            class="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-xl transition-all duration-300 hover:border-white/20"
+            class="bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-10 rounded-xl transition-all duration-300 hover:border-white/20"
           >
-            <h3
-              class="editorial-title text-4xl lg:text-5xl text-[oklch(0.67_0.09_72)] mb-2"
-            >
+            <h3 class="editorial-title text-3xl lg:text-5xl text-[oklch(0.67_0.09_72)] mb-2">
               +700
             </h3>
-            <p
-              class="text-[10px] tracking-[0.2em] text-white/60 uppercase font-medium"
-            >
+            <p class="text-[10px] tracking-[0.2em] text-white/60 uppercase font-medium">
               Atendimentos Realizados
             </p>
           </div>
           <div
-            class="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-xl transition-all duration-300 hover:border-white/20"
+            class="bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-10 rounded-xl transition-all duration-300 hover:border-white/20"
           >
-            <h3
-              class="editorial-title text-4xl lg:text-5xl text-[oklch(0.67_0.09_72)] mb-2"
-            >
+            <h3 class="editorial-title text-3xl lg:text-5xl text-[oklch(0.67_0.09_72)] mb-2">
               Premium
             </h3>
-            <p
-              class="text-[10px] tracking-[0.2em] text-white/60 uppercase font-medium"
-            >
+            <p class="text-[10px] tracking-[0.2em] text-white/60 uppercase font-medium">
               Experiências Personalizadas
             </p>
           </div>
           <div
-            class="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-xl transition-all duration-300 hover:border-white/20"
+            class="bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-10 rounded-xl transition-all duration-300 hover:border-white/20"
           >
-            <h3
-              class="editorial-title text-4xl lg:text-5xl text-[oklch(0.67_0.09_72)] mb-2"
-            >
+            <h3 class="editorial-title text-3xl lg:text-5xl text-[oklch(0.67_0.09_72)] mb-2">
               Atendimento Brasil
             </h3>
-            <p
-              class="text-[10px] tracking-[0.2em] text-white/60 uppercase font-medium"
-            >
+            <p class="text-[10px] tracking-[0.2em] text-white/60 uppercase font-medium">
               Mentorias e Eventos Nacionais
             </p>
           </div>
@@ -660,11 +607,11 @@
     </section>
 
     <section
-      class="py-24 bg-[oklch(0.67_0.09_72)] text-[oklch(0.21_0.02_35)] text-center relative"
+      class="py-20 md:py-24 bg-[oklch(0.67_0.09_72)] text-[oklch(0.21_0.02_35)] text-center relative"
     >
       <div class="max-w-4xl mx-auto px-6 space-y-4">
         <h2
-          class="editorial-title text-3xl sm:text-5xl font-light tracking-wide uppercase"
+          class="editorial-title text-2xl sm:text-5xl font-light tracking-wide uppercase leading-tight"
         >
           Sua evolução pessoal começa hoje.
         </h2>
@@ -675,22 +622,22 @@
       </div>
     </section>
 
-    <section id="contato" class="py-32 bg-[oklch(0.97_0.01_60)] scroll-reveal">
+    <section id="contato" class="py-20 md:py-32 bg-[oklch(0.97_0.01_60)] scroll-reveal">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <div class="text-center max-w-xl mx-auto space-y-4 mb-20">
+        <div class="text-center max-w-xl mx-auto space-y-4 mb-16 md:mb-20">
           <span
             class="text-[oklch(0.67_0.09_72)] text-xs font-semibold tracking-[0.25em] uppercase block"
             >Conectar-se</span
           >
           <h2
-            class="editorial-title text-4xl sm:text-5xl text-[oklch(0.21_0.02_35)]"
+            class="editorial-title text-3xl sm:text-5xl text-[oklch(0.21_0.02_35)]"
           >
             Canais de Atendimento
           </h2>
           <div class="w-16 h-[1px] bg-[oklch(0.67_0.09_72)] mx-auto"></div>
         </div>
 
-        <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
+        <div class="max-w-3xl mx-auto grid sm:grid-cols-2 gap-6">
           <a
             href="https://wa.me/5531972565741"
             target="_blank"
@@ -771,75 +718,89 @@
         }
       });
 
-      // Mobile Menu Trigger
+      // Mobile Menu Trigger (Corrigido e integrado com o botão correto)
       const mobileBtn = document.getElementById("mobileMenuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
+      
       if (mobileBtn && mobileMenu) {
-        mobileBtn.addEventListener("click", () => {
+        mobileBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
           mobileMenu.classList.toggle("hidden");
-          document.addEventListener("click", (e) => {
-            if (
-              !mobileMenu.contains(e.target) &&
-              !mobileBtn.contains(e.target)
-            ) {
-              mobileMenu.classList.add("hidden");
-            }
-          });
+          
+          // Altera o ícone do menu ao abrir/fechar
+          const icon = mobileBtn.querySelector("i");
+          if(mobileMenu.classList.contains("hidden")) {
+            icon.className = "fa-solid fa-bars";
+          } else {
+            icon.className = "fa-solid fa-xmark";
+          }
+        });
+
+        // Fecha ao clicar fora
+        document.addEventListener("click", (e) => {
+          if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+            mobileMenu.add("hidden");
+            mobileBtn.querySelector("i").className = "fa-solid fa-bars";
+          }
         });
       }
 
       document.querySelectorAll(".mobile-link").forEach((link) => {
         link.addEventListener("click", () => {
           mobileMenu.classList.add("hidden");
+          if(mobileBtn) mobileBtn.querySelector("i").className = "fa-solid fa-bars";
         });
       });
 
-      // CORRIGIDO: Seleção exata e inicialização da função
+      // Inicialização do Vídeo
       const video = document.getElementById("meuVideo");
       const btnPlay = document.getElementById("btnPlay");
 
       function tocarVideo() {
-        video.play().catch((error) => {
-          console.log("Autoplay bloqueado. Aguardando interação.");
-          document.addEventListener(
-            "click",
-            () => {
-              video.play();
-              btnPlay.classList.add("opacity-0", "pointer-events-none");
-            },
-            { once: true },
-          );
-        });
+        if(video) {
+          video.play().catch((error) => {
+            console.log("Autoplay bloqueado. Aguardando interação.");
+            document.addEventListener(
+              "click",
+              () => {
+                video.play();
+                btnPlay.classList.add("opacity-0", "pointer-events-none");
+              },
+              { once: true },
+            );
+          });
+        }
       }
 
-      // Executa a verificação ao carregar a página
       tocarVideo();
 
       // Controle do Botão Play Manual
-      btnPlay.addEventListener("click", async (e) => {
-        e.stopPropagation(); // Impede conflito de cliques
-        try {
-          await video.play();
-          btnPlay.classList.add("opacity-0", "pointer-events-none");
-        } catch (erro) {
-          console.log("Erro ao reproduzir vídeo:", erro);
-        }
-      });
+      if(btnPlay && video) {
+        btnPlay.addEventListener("click", async (e) => {
+          e.stopPropagation(); 
+          try {
+            await video.play();
+            btnPlay.classList.add("opacity-0", "pointer-events-none");
+          } catch (erro) {
+            console.log("Erro ao reproduzir vídeo:", erro);
+          }
+        });
 
-      // Clique direto no container do vídeo (Pause/Play)
-      video.addEventListener("click", () => {
-        if (video.paused) {
-          video.play();
-          btnPlay.classList.add("opacity-0", "pointer-events-none");
-        } else {
-          video.pause();
+        // Clique direto no container do vídeo
+        video.addEventListener("click", () => {
+          if (video.paused) {
+            video.play();
+            btnPlay.classList.add("opacity-0", "pointer-events-none");
+          } else {
+            video.pause();
+            btnPlay.classList.remove("opacity-0", "pointer-events-none");
+          }
+        });
+
+        video.addEventListener("ended", () => {
           btnPlay.classList.remove("opacity-0", "pointer-events-none");
-        }
-      });
-
-      video.addEventListener("ended", () => {
-        btnPlay.classList.remove("opacity-0", "pointer-events-none");
-      });
+        });
+      }
     </script>
   </body>
 </html>
