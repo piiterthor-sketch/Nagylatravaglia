@@ -792,33 +792,31 @@ section[id] {
         });
       });
 
-      // Video Controller Logic
-      const video = document.getElementById("meuVideo");
-      const btnPlay = document.getElementById("btnPlay");
+const video = document.getElementById("meuVideo");
+const btnPlay = document.getElementById("btnPlay");
 
-      function toggleVideoPlay() {
-        if (video.paused) {
-          video.play();
-          btnPlay.classList.add("opacity-0", "pointer-events-none");
-        } else {
-          video.pause();
-          btnPlay.classList.remove("opacity-0", "pointer-events-none");
-        }
-      }
+btnPlay.addEventListener("click", async () => {
+  try {
+    await video.play();
+    btnPlay.classList.add("opacity-0", "pointer-events-none");
+  } catch (erro) {
+    console.log("Erro ao reproduzir vídeo:", erro);
+  }
+});
 
-      btnPlay.addEventListener("click", toggleVideoPlay);
-      video.addEventListener("click", toggleVideoPlay);
+video.addEventListener("click", () => {
+  if (video.paused) {
+    video.play();
+    btnPlay.classList.add("opacity-0", "pointer-events-none");
+  } else {
+    video.pause();
+    btnPlay.classList.remove("opacity-0", "pointer-events-none");
+  }
+});
 
-      video.addEventListener("pause", () => {
-        if (!video.ended)
-          btnPlay.classList.remove("opacity-0", "pointer-events-none");
-      });
-
-      video.addEventListener("ended", () => {
-        video.currentTime = 0;
-        video.pause();
-        btnPlay.classList.remove("opacity-0", "pointer-events-none");
-      });
+video.addEventListener("ended", () => {
+  btnPlay.classList.remove("opacity-0", "pointer-events-none");
+});
     </script>
   </body>
 </html>
