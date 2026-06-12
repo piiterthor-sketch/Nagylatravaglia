@@ -49,7 +49,6 @@
         color: var(--ok-chocolate);
         -webkit-font-smoothing: antialiased;
         position: relative;
-        
       }
 
       /* Títulos Editoriais */
@@ -101,12 +100,12 @@
         animation-range: entry 10% cover 40%;
       }
       html {
-  scroll-behavior: smooth;
-}
+        scroll-behavior: smooth;
+      }
 
-section[id] {
-  scroll-margin-top: 120px;
-}
+      section[id] {
+        scroll-margin-top: 120px;
+      }
 
       /* Efeito de Link Editorial */
       .link-hover-effect {
@@ -144,15 +143,18 @@ section[id] {
       }
     </style>
   </head>
-  <body id="topo" class="selection:bg-[oklch(0.67_0.09_72)] selection:text-white">
+  <body
+    id="topo"
+    class="selection:bg-[oklch(0.67_0.09_72)] selection:text-white"
+  >
     <header
       id="mainHeader"
-  class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 bg-transparent"
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 bg-transparent"
     >
       <div
         class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"
       >
-       <a href="#topo" class="inline-block">
+        <a href="#topo" class="inline-block">
           <img
             src="images/nagyla5.png"
             alt="KNT Instituto"
@@ -185,35 +187,35 @@ section[id] {
           >
         </nav>
 
-
-      <div
-        id="mobileMenu"
-        class="hidden fixed inset-x-0 top-[80px] bg-[oklch(0.15_0.02_35_/_0.98)] backdrop-blur-xl border-t border-white/5 transition-all duration-300"
-      >
-        <nav
-          class="flex flex-col text-center py-8 text-white uppercase tracking-[0.2em] text-xs space-y-6"
+        <div
+          id="mobileMenu"
+          class="hidden fixed inset-x-0 top-[80px] bg-[oklch(0.15_0.02_35_/_0.98)] backdrop-blur-xl border-t border-white/5 transition-all duration-300"
         >
-          <a
-            href="#sobre"
-            class="mobile-link py-2 hover:text-[oklch(0.67_0.09_72)] transition-colors"
-            >Sobre</a
+          <nav
+            class="flex flex-col text-center py-8 text-white uppercase tracking-[0.2em] text-xs space-y-6"
           >
-          <a
-            href="#servicos"
-            class="mobile-link py-2 hover:text-[oklch(0.67_0.09_72)] transition-colors"
-            >Serviços</a
-          >
-          <a
-            href="#palestras"
-            class="mobile-link py-2 hover:text-[oklch(0.67_0.09_72)] transition-colors"
-            >Palestras</a
-          >
-          <a
-            href="#contato"
-            class="mobile-link py-2 hover:text-[oklch(0.67_0.09_72)] transition-colors"
-            >Contato</a
-          >
-        </nav>
+            <a
+              href="#sobre"
+              class="mobile-link py-2 hover:text-[oklch(0.67_0.09_72)] transition-colors"
+              >Sobre</a
+            >
+            <a
+              href="#servicos"
+              class="mobile-link py-2 hover:text-[oklch(0.67_0.09_72)] transition-colors"
+              >Serviços</a
+            >
+            <a
+              href="#palestras"
+              class="mobile-link py-2 hover:text-[oklch(0.67_0.09_72)] transition-colors"
+              >Palestras</a
+            >
+            <a
+              href="#contato"
+              class="mobile-link py-2 hover:text-[oklch(0.67_0.09_72)] transition-colors"
+              >Contato</a
+            >
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -249,7 +251,7 @@ section[id] {
           <p
             class="text-white/70 text-sm sm:text-base md:text-lg font-light max-w-xl leading-relaxed"
           >
-            O KNT Instituto é um ambiente de desenvolvimento humano voltado para
+            O KNT Instituto é um ambiente de development humano voltado para
             pessoas que desejam romper limitações, assumir o controle da própria
             história e construir um legado de impacto.
           </p>
@@ -271,20 +273,25 @@ section[id] {
             </a>
           </div>
         </div>
-          <div class="md:col-span-5 flex justify-center md:justify-end w-full mt-12 md:mt-24">
+
+        <div
+          class="md:col-span-5 flex justify-center md:justify-end w-full mt-12 md:mt-24"
+        >
           <div
-           class="relative w-full max-w-[340px] aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
-          <video
-            id="meuVideo"
-            playsinline
-            muted
-            preload="metadata"
-            class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+            class="relative w-full max-w-[340px] aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group"
           >
-            <video src="images/video.mp4" muted playsinline autoplay loop>
-    Seu navegador não suporta o elemento de vídeo.
-</video>
-          </video>
+            <video
+              id="meuVideo"
+              src="images/video.mp4"
+              playsinline
+              muted
+              autoplay
+              loop
+              preload="auto"
+              class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 cursor-pointer"
+            >
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
 
             <button
               id="btnPlay"
@@ -389,197 +396,195 @@ section[id] {
       </div>
     </section>
 
-   <section id="servicos" class="py-32 bg-white scroll-reveal">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <section id="servicos" class="py-32 bg-white scroll-reveal">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="text-center max-w-2xl mx-auto space-y-4 mb-20">
+          <span
+            class="text-[oklch(0.67_0.09_72)] text-xs font-semibold tracking-[0.25em] uppercase block"
+          >
+            Portfólio de Soluções
+          </span>
+          <h2
+            class="editorial-title text-4xl sm:text-5xl text-[oklch(0.21_0.02_35)]"
+          >
+            Experiências & Mentorias Premium
+          </h2>
+          <div class="w-16 h-[1px] bg-[oklch(0.67_0.09_72)] mx-auto"></div>
+        </div>
 
-    <div class="text-center max-w-2xl mx-auto space-y-4 mb-20">
-      <span
-        class="text-[oklch(0.67_0.09_72)] text-xs font-semibold tracking-[0.25em] uppercase block"
-      >
-        Portfólio de Soluções
-      </span>
-
-      <h2
-        class="editorial-title text-4xl sm:text-5xl text-[oklch(0.21_0.02_35)]"
-      >
-        Experiências & Mentorias Premium
-      </h2>
-
-      <div class="w-16 h-[1px] bg-[oklch(0.67_0.09_72)] mx-auto"></div>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div
-        class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
-      >
-        <div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
-            class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
+            class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
           >
-            <i class="fa-solid fa-users-viewfinder"></i>
+            <div>
+              <div
+                class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
+              >
+                <i class="fa-solid fa-users-viewfinder"></i>
+              </div>
+              <h3
+                class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
+              >
+                Mentoria Estratégica
+              </h3>
+              <p
+                class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
+              >
+                Acompanhamento individualizado de alto padrão, focado em
+                acelerar resultados e alinhar o seu posicionamento pessoal e
+                profissional.
+              </p>
+            </div>
+            <span
+              class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
+            >
+              Saber Mais →
+            </span>
           </div>
-          <h3
-            class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
-          >
-            Mentoria Estratégica
-          </h3>
-          <p
-            class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
-          >
-            Acompanhamento individualizado de alto padrão, focado em acelerar
-            resultados e alinhar o seu posicionamento pessoal e profissional.
-          </p>
-        </div>
-        <span
-          class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
-        >
-          Saber Mais →
-        </span>
-      </div>
 
-      <div
-        class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
-      >
-        <div>
           <div
-            class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
+            class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
           >
-            <i class="fa-solid fa-microphone-lines"></i>
+            <div>
+              <div
+                class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
+              >
+                <i class="fa-solid fa-microphone-lines"></i>
+              </div>
+              <h3
+                class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
+              >
+                Palestras de Alto Impacto
+              </h3>
+              <p
+                class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
+              >
+                Conteúdos inspiradores que despertam liderança, propósito e
+                inteligência emocional para eventos, empresas e convenções.
+              </p>
+            </div>
+            <span
+              class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
+            >
+              Saber Mais →
+            </span>
           </div>
-          <h3
-            class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
-          >
-            Palestras de Alto Impacto
-          </h3>
-          <p
-            class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
-          >
-            Conteúdos inspiradores que despertam liderança, propósito e
-            inteligência emocional para eventos, empresas e convenções.
-          </p>
-        </div>
-        <span
-          class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
-        >
-          Saber Mais →
-        </span>
-      </div>
 
-      <div
-        class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
-      >
-        <div>
           <div
-            class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
+            class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
           >
-            <i class="fa-solid fa-building-user"></i>
+            <div>
+              <div
+                class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
+              >
+                <i class="fa-solid fa-building-user"></i>
+              </div>
+              <h3
+                class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
+              >
+                Treinamentos Corporativos
+              </h3>
+              <p
+                class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
+              >
+                Desenvolvimento de equipes e lideranças por meio de metodologias
+                focadas em desempenho, comunicação e engajamento.
+              </p>
+            </div>
+            <span
+              class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
+            >
+              Saber Mais →
+            </span>
           </div>
-          <h3
-            class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
-          >
-            Treinamentos Corporativos
-          </h3>
-          <p
-            class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
-          >
-            Desenvolvimento de equipes e lideranças por meio de metodologias
-            focadas em desempenho, comunicação e engajamento.
-          </p>
-        </div>
-        <span
-          class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
-        >
-          Saber Mais →
-        </span>
-      </div>
 
-      <div
-        class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
-      >
-        <div>
           <div
-            class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
+            class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
           >
-            <i class="fa-solid fa-gem"></i>
+            <div>
+              <div
+                class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
+              >
+                <i class="fa-solid fa-gem"></i>
+              </div>
+              <h3
+                class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
+              >
+                Estratégia de Imagem
+              </h3>
+              <p
+                class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
+              >
+                Construção de uma identidade autêntica e coerente, fortalecendo
+                sua presença e autoridade no mercado.
+              </p>
+            </div>
+            <span
+              class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
+            >
+              Saber Mais →
+            </span>
           </div>
-          <h3
-            class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
-          >
-            Estratégia de Imagem
-          </h3>
-          <p
-            class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
-          >
-            Construção de uma identidade autêntica e coerente, fortalecendo sua
-            presença e autoridade no mercado.
-          </p>
-        </div>
-        <span
-          class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
-        >
-          Saber Mais →
-        </span>
-      </div>
 
-      <div
-        class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
-      >
-        <div>
           <div
-            class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
+            class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
           >
-            <i class="fa-solid fa-brain"></i>
+            <div>
+              <div
+                class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
+              >
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <h3
+                class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
+              >
+                Terapia e Cura Emocional
+              </h3>
+              <p
+                class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
+              >
+                Processos terapêuticos voltados para o equilíbrio emocional,
+                fortalecimento interno e transformação de padrões limitantes.
+              </p>
+            </div>
+            <span
+              class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
+            >
+              Saber Mais →
+            </span>
           </div>
-          <h3
-            class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
-          >
-            Terapia e Cura Emocional
-          </h3>
-          <p
-            class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
-          >
-            Processos terapêuticos voltados para o equilíbrio emocional,
-            fortalecimento interno e transformação de padrões limitantes.
-          </p>
-        </div>
-        <span
-          class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
-        >
-          Saber Mais →
-        </span>
-      </div>
 
-      <div
-        class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
-      >
-        <div>
           <div
-            class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
+            class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl"
           >
-            <i class="fa-solid fa-crown"></i>
+            <div>
+              <div
+                class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white"
+              >
+                <i class="fa-solid fa-crown"></i>
+              </div>
+              <h3
+                class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
+              >
+                Imersão de Alta Performance
+              </h3>
+              <p
+                class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
+              >
+                Experiência exclusiva para desenvolver liderança, inteligência
+                emocional, clareza estratégica e excelência em resultados.
+              </p>
+            </div>
+            <span
+              class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
+            >
+              Saber Mais →
+            </span>
           </div>
-          <h3
-            class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white"
-          >
-            Imersão de Alta Performance
-          </h3>
-          <p
-            class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed"
-          >
-            Experiência exclusiva para desenvolver liderança, inteligência
-            emocional, clareza estratégica e excelência em resultados.
-          </p>
         </div>
-        <span
-          class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4"
-        >
-          Saber Mais →
-        </span>
       </div>
-    </div>
-        </div>
-  </div>
-</section>
+    </section>
+
     <section
       id="palestras"
       class="py-32 bg-[oklch(0.21_0.02_35)] text-white relative overflow-hidden scroll-reveal"
@@ -768,17 +773,19 @@ section[id] {
       // Mobile Menu Trigger
       const mobileBtn = document.getElementById("mobileMenuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
-      mobileBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-        document.addEventListener("click", (e) => {
-  if (
-    !mobileMenu.contains(e.target) &&
-    !mobileBtn.contains(e.target)
-  ) {
-    mobileMenu.classList.add("hidden");
-  }
-});
-      });
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          document.addEventListener("click", (e) => {
+            if (
+              !mobileMenu.contains(e.target) &&
+              !mobileBtn.contains(e.target)
+            ) {
+              mobileMenu.classList.add("hidden");
+            }
+          });
+        });
+      }
 
       document.querySelectorAll(".mobile-link").forEach((link) => {
         link.addEventListener("click", () => {
@@ -786,42 +793,52 @@ section[id] {
         });
       });
 
-const video = document.querySelector('video'); // Ou a sua variável do vídeo
+      // CORRIGIDO: Seleção exata e inicialização da função
+      const video = document.getElementById("meuVideo");
+      const btnPlay = document.getElementById("btnPlay");
 
-function tocarVideo() {
-    video.play().catch(error => {
-        console.log("O autoplay foi bloqueado pelo navegador. Aguardando clique do usuário.");
-        
-        // Solução alternativa: Toca o vídeo assim que o usuário clicar na tela
-        document.addEventListener('click', () => {
-            video.play();
-        }, { once: true }); // Executa apenas uma vez
-    });
-}
-const btnPlay = document.getElementById("btnPlay");
+      function tocarVideo() {
+        video.play().catch((error) => {
+          console.log("Autoplay bloqueado. Aguardando interação.");
+          document.addEventListener(
+            "click",
+            () => {
+              video.play();
+              btnPlay.classList.add("opacity-0", "pointer-events-none");
+            },
+            { once: true },
+          );
+        });
+      }
 
-btnPlay.addEventListener("click", async () => {
-  try {
-    await video.play();
-    btnPlay.classList.add("opacity-0", "pointer-events-none");
-  } catch (erro) {
-    console.log("Erro ao reproduzir vídeo:", erro);
-  }
-});
+      // Executa a verificação ao carregar a página
+      tocarVideo();
 
-video.addEventListener("click", () => {
-  if (video.paused) {
-    video.play();
-    btnPlay.classList.add("opacity-0", "pointer-events-none");
-  } else {
-    video.pause();
-    btnPlay.classList.remove("opacity-0", "pointer-events-none");
-  }
-});
+      // Controle do Botão Play Manual
+      btnPlay.addEventListener("click", async (e) => {
+        e.stopPropagation(); // Impede conflito de cliques
+        try {
+          await video.play();
+          btnPlay.classList.add("opacity-0", "pointer-events-none");
+        } catch (erro) {
+          console.log("Erro ao reproduzir vídeo:", erro);
+        }
+      });
 
-video.addEventListener("ended", () => {
-  btnPlay.classList.remove("opacity-0", "pointer-events-none");
-});
+      // Clique direto no container do vídeo (Pause/Play)
+      video.addEventListener("click", () => {
+        if (video.paused) {
+          video.play();
+          btnPlay.classList.add("opacity-0", "pointer-events-none");
+        } else {
+          video.pause();
+          btnPlay.classList.remove("opacity-0", "pointer-events-none");
+        }
+      });
+
+      video.addEventListener("ended", () => {
+        btnPlay.classList.remove("opacity-0", "pointer-events-none");
+      });
     </script>
   </body>
 </html>
