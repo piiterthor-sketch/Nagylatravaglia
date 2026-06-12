@@ -1,836 +1,460 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>KNT Instituto | Palestrante & Terapeuta</title>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<title>KNT Instituto | Palestrante & Terapeuta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
-<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
 
-<style>
+    <style>
+        /* Modern Design System - OKLCH Colors */
+        :root {
+            --ok-chocolate: oklch(0.21 0.02 35);
+            --ok-chocolate-dark: oklch(0.15 0.02 35);
+            --ok-bronze: oklch(0.67 0.09 72);
+            --ok-taupe: oklch(0.82 0.02 75);
+            --ok-off-white: oklch(0.97 0.01 60);
+            --ok-white: oklch(1 0 0);
+        }
 
-/* =========================================================
-   FONTE PRINCIPAL E IDENTIDADE KNT
-========================================================= */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--ok-off-white);
+            color: var(--ok-chocolate);
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+        }
 
-:root{
+        /* Títulos Editoriais */
+        .editorial-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+        }
 
-    /* PALETA INSTITUCIONAL KNT */
-    --chocolate: #2B221B;
-    --bronze:    #B08A5B;
-    --taupe:     #CBBEAF;
-    --off-white: #F7F4EF;
-    --branco:    #FFFFFF;
+        /* Camada Fina de Grão de Filme (Efeito Analógico Premium) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            opacity: 0.035;
+            pointer-events: none;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
 
-    /* LOGO */
-    --logo-width: 140px;
-    --logo-width-mobile: 105px;
+        /* Blur de Vidro Reativo (Header) */
+        .glass-header {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: oklch(0.21 0.02 35 / 0.75);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-}
+        /* Animações Smooth Scroll & Fade-in nativo via CSS */
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-/* =========================================================
-   RESET & TIPOGRAFIA PREMIUM
-========================================================= */
+        .scroll-reveal {
+            view-timeline-name: --section;
+            view-timeline-axis: block;
+            animation-timeline: --section;
+            animation-name: reveal;
+            animation-fill-mode: both;
+            animation-range: entry 10% cover 40%;
+        }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Efeito de Link Editorial */
+        .link-hover-effect {
+            position: relative;
+        }
+        .link-hover-effect::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--ok-bronze);
+            transform-origin: bottom right;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .link-hover-effect:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
 
-html{
-    scroll-behavior: smooth;
-}
-
-body{
-    font-family: 'Montserrat', sans-serif;
-    background: var(--off-white);
-    color: var(--chocolate);
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* Estilo Trajan/Montserrat H1-H4 */
-h1, h2, h3, h4 {
-    font-weight: 300;
-    letter-spacing: 0.05em;
-}
-
-.section-title{
-    font-size: 2.8rem;
-    font-weight: 300;
-    line-height: 1.3;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--chocolate);
-}
-
-.bronze-text{
-    color: var(--bronze);
-}
-
-/* =========================================================
-   HEADER TRANSPARENTE
-========================================================= */
-
-.header{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    background: transparent;
-    border-bottom: none;
-}
-
-.logo-site{
-    width: var(--logo-width);
-    height: auto;
-    object-fit: contain;
-    transition: .3s;
-}
-
-.menu a{
-    position: relative;
-    transition: .3s;
-    font-weight: 500;
-}
-
-.menu a:hover{
-    color: var(--bronze);
-}
-
-.menu a::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0%;
-    height: 1px;
-    background: var(--bronze);
-    transition: .3s;
-}
-
-.menu a:hover::after{
-    width: 100%;
-}
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    padding-top: 180px;
-    padding-bottom: 80px;
-}
-
-.hero img.bg{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-overlay{
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to right,
-        rgba(43, 34, 27, 0.95), /* Baseado no Chocolate KNT */
-        rgba(43, 34, 27, 0.70)
-    );
-}
-
-.hero-subtitle{
-    display: block;
-    color: var(--bronze);
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 24px;
-}
-
-/* =========================================================
-   BOTÕES PREMIUM
-========================================================= */
-
-.btn-premium{
-    background: var(--bronze);
-    color: var(--branco);
-    transition: .4s cubic-bezier(0.16, 1, 0.3, 1);
-    font-weight: 500;
-}
-
-.btn-premium:hover{
-    background: var(--chocolate);
-    color: var(--branco);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(43, 34, 27, 0.15);
-}
-
-.btn-outline{
-    transition: .4s cubic-bezier(0.16, 1, 0.3, 1);
-    font-weight: 500;
-}
-
-.btn-outline:hover{
-    background: var(--branco);
-    color: var(--chocolate);
-    border-color: var(--branco);
-}
-
-/* =========================================================
-   LINHA DE ASSINATURA
-========================================================= */
-
-.line{
-    width: 80px;
-    height: 1px;
-    background: var(--bronze);
-    margin: auto;
-}
-
-/* =========================================================
-   CARDS DE SERVIÇOS
-========================================================= */
-
-.service-card{
-    transition: .4s cubic-bezier(0.16, 1, 0.3, 1);
-    border: 1px solid rgba(203, 190, 175, 0.2); /* Sutil borda Taupe */
-}
-
-.service-card:hover{
-    transform: translateY(-8px);
-    box-shadow: 0 24px 48px rgba(43, 34, 27, 0.06);
-    border-color: var(--taupe);
-}
-
-/* =========================================================
-   GLASS EFFECT INSTITUCIONAL
-========================================================= */
-
-.glass{
-    backdrop-filter: blur(12px);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* =========================================================
-   WHATSAPP
-========================================================= */
-
-.whatsapp-float{
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    z-index: 999;
-}
-
-.whatsapp-float a{
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #25D366;
-    color: var(--branco);
-    font-size: 28px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    transition: .3s;
-}
-
-.whatsapp-float a:hover{
-    transform: scale(1.08);
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer a{
-    transition: .3s;
-}
-
-footer a:hover{
-    color: var(--bronze);
-}
-
-/* =========================================================
-   RESPONSIVO
-========================================================= */
-
-@media(max-width:768px){
-
-    .logo-site{
-        width: var(--logo-width-mobile);
-    }
-
-    .hero{
-        padding-top: 200px;
-        padding-bottom: 80px;
-    }
-
-    .section-title{
-        font-size: 2rem;
-    }
-
-    h1{
-        font-size: 2.6rem !important;
-        line-height: 1.25 !important;
-    }
-
-}
-
-</style>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-
+        /* custom gradient slider para o fundo do hero */
+        .hero-parallax-bg {
+            background: linear-gradient(to bottom, oklch(0.15 0.02 35 / 0.8), oklch(0.21 0.02 35)), 
+                        url('images/nagilakil2.jpeg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
+<body class="selection:bg-[oklch(0.67_0.09_72)] selection:text-white">
 
-<body>
+    <header id="mainHeader" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+            <a href="#" class="inline-block">
+                <img src="images/nagyla5.png" alt="KNT Instituto" class="w-28 md:w-36 h-auto object-contain transition-all duration-300">
+            </a>
 
-<header class="header">
+            <nav class="hidden md:flex items-center gap-10 text-white text-[11px] tracking-[0.25em] font-medium">
+                <a href="#sobre" class="link-hover-effect transition-colors duration-300 hover:text-[oklch(0.67_0.09_72)]">SOBRE</a>
+                <a href="#servicos" class="link-hover-effect transition-colors duration-300 hover:text-[oklch(0.67_0.09_72)]">SERVIÇOS</a>
+                <a href="#palestras" class="link-hover-effect transition-colors duration-300 hover:text-[oklch(0.67_0.09_72)]">PALESTRAS</a>
+                <a href="#contato" class="link-hover-effect transition-colors duration-300 hover:text-[oklch(0.67_0.09_72)]">CONTATO</a>
+            </nav>
 
-    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-
-        <a href="#" class="flex items-center">
-            <img src="images/nagyla5.png" alt="KNT Instituto" class="logo-site">
-        </a>
-
-        <!-- MENU DESKTOP -->
-        <nav class="menu hidden md:flex items-center gap-10 text-white text-xs tracking-[0.2em]">
-
-            <a href="#sobre">SOBRE</a>
-            <a href="#servicos">SERVIÇOS</a>
-            <a href="#palestras">PALESTRAS</a>
-            <a href="#contato">CONTATO</a>
-
-        </nav>
-
-        <!-- BOTÃO MOBILE -->
-        <button
-            id="mobileMenuBtn"
-            class="md:hidden text-white text-3xl">
-
-            <i class="fa-solid fa-bars"></i>
-
-        </button>
-
-    </div>
-
-    <!-- MENU MOBILE -->
-
-    <div
-        id="mobileMenu"
-        class="hidden md:hidden bg-[#2B221B]/95 backdrop-blur-lg">
-
-        <nav class="flex flex-col text-center py-6 text-white uppercase tracking-[0.15em] text-sm">
-
-            <a href="#sobre" class="py-4 border-b border-white/10">Sobre</a>
-
-            <a href="#servicos" class="py-4 border-b border-white/10">Serviços</a>
-
-            <a href="#palestras" class="py-4 border-b border-white/10">Palestras</a>
-
-            <a href="#contato" class="py-4">Contato</a>
-
-        </nav>
-
-    </div>
-<script>
-
-const mobileBtn = document.getElementById('mobileMenuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-
-mobileBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
-
-document.querySelectorAll('#mobileMenu a').forEach(link => {
-
-    link.addEventListener('click', () => {
-
-        mobileMenu.classList.add('hidden');
-
-    });
-
-});
-
-</script>
-</header>
-
-<section class="hero">
-
-
-    <div class="hero-overlay"></div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-
-        <!-- TEXTO -->
-        <div>
-
-            <span class="hero-subtitle">
-                KNT INSTITUTO • Conhecimento. Transformação. Excelência
-            </span>
-
-            <h1 class="text-4xl md:text-6xl text-white leading-tight font-light">
-                Transformando vidas através da cura emocional e do despertar pessoal.
-            </h1>
-
-            <p class="text-white/80 mt-8 text-base md:text-lg leading-8 max-w-xl font-light">
-                O KNT Instituto atua impactando pessoas através de palestras,
-                terapias, mentorias e experiências transformadoras voltadas ao
-                autoconhecimento, inteligência emocional, espiritualidade e
-                desenvolvimento humano.
-            </p>
-
-            <div class="flex flex-wrap gap-5 mt-10 text-xs tracking-[0.15em]">
-
-                <a href="https://wa.me/5531972565641 "
-                   target="_blank"
-                   class="px-8 py-4 rounded-none btn-premium font-medium">
-                    ATENDIMENTO
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/5531972565641" target="_blank" class="hidden lg:inline-block border border-[oklch(0.67_0.09_72)] text-[oklch(0.67_0.09_72)] hover:bg-[oklch(0.67_0.09_72)] hover:text-white transition-all duration-500 px-6 py-2.5 text-[10px] tracking-[0.2em] font-medium uppercase">
+                    Agendar Sessão
                 </a>
-
-                <a href="https://www.instagram.com/nagylatravagliaoficial?igsh=NG5pNzcwMjVjYXc3"
-                   target="_blank"
-                   class="btn-outline px-8 py-4 rounded-none border border-white/40 text-white">
-                    INSTAGRAM
-                </a>
-
+                <button id="mobileMenuBtn" class="md:hidden text-white text-2xl focus:outline-none" aria-label="Abrir Menu">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
             </div>
+        </div>
 
-        </div> 
+        <div id="mobileMenu" class="hidden fixed inset-x-0 top-[80px] bg-[oklch(0.15_0.02_35_/_0.98)] backdrop-blur-xl border-t border-white/5 transition-all duration-300">
+            <nav class="flex flex-col text-center py-8 text-white uppercase tracking-[0.2em] text-xs space-y-6">
+                <a href="#sobre" class="mobile-link py-2 hover:text-[oklch(0.67_0.09_72)] transition-colors">Sobre</a>
+                <a href="#servicos" class="mobile-link py-2 hover:text-[oklch(0.67_0.09_72)] transition-colors">Serviços</a>
+                <a href="#palestras" class="mobile-link py-2 hover:text-[oklch(0.67_0.09_72)] transition-colors">Palestras</a>
+                <a href="#contato" class="mobile-link py-2 hover:text-[oklch(0.67_0.09_72)] transition-colors">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-parallax-bg relative min-height-[100vh] flex items-center pt-40 pb-24 md:py-0 md:h-screen overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-[oklch(0.21_0.02_35)] via-transparent to-transparent opacity-80"></div>
         
-
-<div class="flex justify-center md:justify-end w-full">
-<div class="relative w-full max-w-[420px] aspect-[9/16] rounded-xl overflow-hidden border-2 border-[#D2B48C] shadow-[0_0_25px_rgba(210,180,140,0.35)] group">
-        <video
-            id="meuVideo"
-            playsinline
-            class="w-full h-full object-cover">
-            <source src="images/video.mp4" type="video/mp4">
-        </video>
-
-        <button
-            id="btnPlay"
-            class="absolute inset-0 flex items-center justify-center bg-black/40 transition-all duration-300 hover:bg-black/20 z-10">
-
-            <div class="w-16 h-16 flex items-center justify-center bg-white text-black rounded-full shadow-xl hover:scale-110 transition-transform pl-1">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     fill="currentColor"
-                     viewBox="0 0 24 24"
-                     class="w-8 h-8">
-                    <path d="M8 5v14l11-7z"/>
-                </svg>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full grid md:grid-cols-12 gap-12 items-center">
+            
+            <div class="md:col-span-7 text-left space-y-6">
+                <div class="inline-flex items-center gap-3">
+                    <span class="w-12 h-[1px] bg-[oklch(0.67_0.09_72)]"></span>
+                    <span class="text-[oklch(0.67_0.09_72)] tracking-[0.3em] uppercase text-[10px] font-semibold block">
+                        KNT INSTITUTO • DESPERTAR & EVOLUÇÃO
+                    </span>
+                </div>
+                
+                <h1 class="editorial-title text-4xl sm:text-5xl lg:text-7xl text-white leading-[1.1] font-light">
+                    Transformação profunda de dentro <br><span class="italic text-[oklch(0.67_0.09_72)] font-serif">para fora.</span>
+                </h1>
+                
+                <p class="text-white/70 text-sm sm:text-base md:text-lg font-light max-w-xl leading-relaxed">
+                    Impactando vidas através de palestras, mentorias estratégicas e experiências terapêuticas focadas na inteligência emocional e no desenvolvimento humano de alto padrão.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="https://wa.me/5531972565641" target="_blank" class="px-8 py-4 bg-[oklch(0.67_0.09_72)] text-white text-[11px] tracking-[0.2em] font-medium uppercase transition-all duration-300 hover:bg-white hover:text-[oklch(0.21_0.02_35)] shadow-lg shadow-black/10">
+                        Atendimento Premium
+                    </a>
+                    <a href="https://www.instagram.com/nagylatravagliaoficial?igsh=NG5pNzcwMjVjYXc3" target="_blank" class="px-8 py-4 border border-white/20 text-white text-[11px] tracking-[0.2em] font-medium uppercase transition-all duration-300 hover:bg-white/10">
+                        Siga no Instagram
+                    </a>
+                </div>
             </div>
 
-        </button>
-
-    </div>
-</div>
-
-<script>
-const video = document.getElementById('meuVideo');
-const btnPlay = document.getElementById('btnPlay');
-
-// Play e Pause ao clicar no botão
-btnPlay.addEventListener('click', () => {
-
-    if(video.paused){
-        video.play();
-        btnPlay.classList.add('hidden');
-    }else{
-        video.pause();
-        btnPlay.classList.remove('hidden');
-    }
-
-});
-
-// Permite pausar clicando diretamente no vídeo
-video.addEventListener('click', () => {
-
-    if(video.paused){
-        video.play();
-        btnPlay.classList.add('hidden');
-    }else{
-        video.pause();
-        btnPlay.classList.remove('hidden');
-    }
-
-});
-
-// Quando pausar mostra o botão
-video.addEventListener('pause', () => {
-
-    if(!video.ended){
-        btnPlay.classList.remove('hidden');
-    }
-
-});
-
-// Quando terminar volta para o início
-video.addEventListener('ended', () => {
-
-    video.currentTime = 0;
-    video.pause();
-
-    btnPlay.classList.remove('hidden');
-
-});
-</script>
-
-</section>
-
-<section id="sobre" class="py-28 bg-[#F7F4EF]">
-
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
-
-        <div>
-
-            <img src="images/nagilakil2.jpeg" class="shadow-xl w-full object-cover scale-120 -translate-y-4" alt="Sobre o Instituto" />
+            <div class="md:col-span-5 flex justify-center md:justify-end w-full">
+                <div class="relative w-full max-w-[340px] aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group group">
+                    <video id="meuVideo" playsinline class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700">
+                        <source src="images/video.mp4" type="video/mp4">
+                    </video>
+                    
+                    <button id="btnPlay" class="absolute inset-0 flex items-center justify-center bg-[oklch(0.21_0.02_35_/_0.4)] backdrop-blur-sm transition-all duration-500 hover:bg-black/20 z-10">
+                        <div class="w-16 h-16 flex items-center justify-center bg-white text-[oklch(0.21_0.02_35)] rounded-full shadow-2xl transform transition-transform duration-500 group-hover:scale-110 pl-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
 
         </div>
+    </section>
 
-        <div>
+    <section id="sobre" class="py-32 bg-[oklch(0.97_0.01_60)] scroll-reveal">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-16 items-center">
+            
+            <div class="md:col-span-5 relative">
+                <div class="absolute -inset-4 border border-[oklch(0.67_0.09_72)]/30 translate-x-8 translate-y-8 pointer-events-none rounded-sm"></div>
+                <div class="overflow-hidden rounded-sm shadow-2xl">
+                    <img src="images/nagilakil2.jpeg" class="w-full h-[550px] object-cover hover:scale-105 transition-transform duration-700" alt="Nagyla Travaglia - KNT Instituto" />
+                </div>
+            </div>
 
-        <div>
+            <div class="md:col-span-7 space-y-6">
+                <span class="text-[oklch(0.67_0.09_72)] text-xs font-semibold tracking-[0.25em] uppercase block">Sobre o Instituto</span>
+                <h2 class="editorial-title text-4xl sm:text-5xl text-[oklch(0.21_0.02_35)] leading-[1.2]">
+                    Uma trajetória moldada por <br><span class="italic font-serif">propósito e refinamento.</span>
+                </h2>
+                <div class="w-20 h-[1px] bg-[oklch(0.67_0.09_72)] my-4"></div>
+                
+                <div class="text-sm sm:text-base leading-relaxed text-[oklch(0.21_0.02_35)]/80 font-light space-y-4">
+                    <p>O KNT Instituto nasceu com a premissa fundamental de desenvolver pessoas para alcançarem sua máxima performance existencial, harmonizando conhecimento profundo, inteligência emocional e posicionamento estratégico de excelência.</p>
+                    <p>Acreditamos fielmente que transformações duradouras estruturam-se de dentro para fora. Desse modo, promovemos metodologias exclusivas em mentorias, treinamentos corporativos e vivências imersivas de alto impacto capazes de ressignificar identidades e expandir vertiginosamente legados pessoais e corporativos.</p>
+                </div>
 
-            <span class="uppercase text-xs font-semibold tracking-[0.2em] text-[#B08A5B]">
-                Sobre o Instituto
-            </span>
+                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-[oklch(0.21_0.02_35)]/10 text-center md:text-left">
+                    <div>
+                        <h4 class="editorial-title text-2xl text-[oklch(0.67_0.09_72)]">Visão</h4>
+                        <p class="text-xs text-[oklch(0.21_0.02_35)]/60 font-light mt-1">Expandir horizontes de liderança.</p>
+                    </div>
+                    <div>
+                        <h4 class="editorial-title text-2xl text-[oklch(0.67_0.09_72)]">Ação</h4>
+                        <p class="text-xs text-[oklch(0.21_0.02_35)]/60 font-light mt-1">Mudanças reais e pragmáticas.</p>
+                    </div>
+                    <div>
+                        <h4 class="editorial-title text-2xl text-[oklch(0.67_0.09_72)]">Impacto</h4>
+                        <p class="text-xs text-[oklch(0.21_0.02_35)]/60 font-light mt-1">Resultados duradouros.</p>
+                    </div>
+                </div>
+            </div>
 
-            <h2 class="section-title mt-4">
+        </div>
+    </section>
 
-                Uma trajetória marcada por propósito e transformação.
+    <section id="servicos" class="py-32 bg-white scroll-reveal">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-20">
+                <span class="text-[oklch(0.67_0.09_72)] text-xs font-semibold tracking-[0.25em] uppercase block">Portfólio Soluções</span>
+                <h2 class="editorial-title text-4xl sm:text-5xl text-[oklch(0.21_0.02_35)]">Experiências & Mentorias Premium</h2>
+                <div class="w-16 h-[1px] bg-[oklch(0.67_0.09_72)] mx-auto"></div>
+            </div>
 
-            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl">
+                    <div>
+                        <div class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white">
+                            <i class="fa-solid fa-users-viewfinder"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white">Mentoria Estratégica</h3>
+                        <p class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed">
+                            Acompanhamento individualizado de alto padrão, focado em acelerar resultados e alinhar o seu posicionamento.
+                        </p>
+                    </div>
+                    <span class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4">Saber Mais →</span>
+                </div>
 
-            <div class="line ml-0 my-6"></div>
+                <div class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl">
+                    <div>
+                        <div class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white">
+                            <i class="fa-solid fa-microphone-lines"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white">Palestras de Alto Impacto</h3>
+                        <p class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed">
+                            Injeção de inteligência emocional e liderança inspiradora sob medida para eventos e convenções de alto nível.
+                        </p>
+                    </div>
+                    <span class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4">Saber Mais →</span>
+                </div>
 
-            <p class="text-base leading-8 text-[#2B221B]/80 font-light">
+                <div class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl">
+                    <div>
+                        <div class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white">
+                            <i class="fa-solid fa-building-user"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white">Treinamentos Corporativos</h3>
+                        <p class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed">
+                            Desenvolvimento de equipes corporativas unindo produtividade, inteligência emocional e alta performance.
+                        </p>
+                    </div>
+                    <span class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4">Saber Mais →</span>
+                </div>
 
-               O KNT Instituto nasceu com a missão de desenvolver pessoas para viverem seu máximo potencial, unindo conhecimento, inteligência emocional, posicionamento estratégico e excelência.
+                <div class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl">
+                    <div>
+                        <div class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white">Estratégia de Imagem</h3>
+                        <p class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed">
+                            Construção de uma identidade alinhada ao seu propósito de mercado, chancelando e expandindo sua autoridade.
+                        </p>
+                    </div>
+                    <span class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4">Saber Mais →</span>
+                </div>
 
-Acreditamos que resultados consistentes são construídos de dentro para fora. Por isso, promovemos experiências, mentorias, treinamentos e formações que fortalecem a identidade, ampliam a consciência e impulsionam o crescimento pessoal e profissional.
+                <div class="group bg-[oklch(0.97_0.01_60)] p-10 transition-all duration-500 hover:bg-[oklch(0.21_0.02_35)] hover:-translate-y-2 rounded-2xl flex flex-col justify-between h-[320px] shadow-sm hover:shadow-2xl">
+                    <div>
+                        <div class="text-3xl text-[oklch(0.67_0.09_72)] mb-6 transition-colors duration-500 group-hover:text-white">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-3 text-[oklch(0.21_0.02_35)] transition-colors duration-500 group-hover:text-white">Terapia e Cura Emocional</h3>
+                        <p class="text-xs sm:text-sm text-[oklch(0.21_0.02_35)]/70 transition-colors duration-500 group-hover:text-white/70 font-light leading-relaxed">
+                            Processos profundos focados na quebra de barreiras ocultas e no pleno reequilíbrio emocional interior.
+                        </p>
+                    </div>
+                    <span class="text-[10px] tracking-[0.2em] uppercase text-[oklch(0.67_0.09_72)] font-medium pt-4">Saber Mais →</span>
+                </div>
+            </div>
 
-Mais do que ensinar métodos, despertamos protagonismo. Mais do que transmitir conhecimento, geramos transformação.
+        </div>
+    </section>
 
-O KNT Instituto é um ambiente de desenvolvimento humano voltado para pessoas que desejam romper limitações, assumir o controle da própria história e construir um legado de impacto.
-
-Nossa Essência
-
-Conhecimento para expandir a visão.
-
-Transformação para gerar mudanças reais.
-
-Excelência para construir resultados duradouros.
-
-Nosso Propósito
-
-Desenvolver líderes, empreendedores e profissionais capazes de transformar suas vidas, seus negócios e sua influência no mundo através do autoconhecimento, da estratégia e da ação.
-
-KNT Instituto
-Transformamos conhecimento em identidade, posicionamento e legado. ✨🤎
-
+    <section id="palestras" class="py-32 bg-[oklch(0.21_0.02_35)] text-white relative overflow-hidden scroll-reveal">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_oklch(0.67_0.09_72_/_0.15),_transparent_45%)]"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 text-center relative z-10 space-y-6">
+            <span class="text-[oklch(0.67_0.09_72)] text-xs font-semibold tracking-[0.3em] uppercase block">Impacto Mensurável</span>
+            <h2 class="editorial-title text-4xl sm:text-5xl text-white">Comunicação Sofisticada, Mensagem Transformadora.</h2>
+            <div class="w-20 h-[1px] bg-[oklch(0.67_0.09_72)] mx-auto"></div>
+            
+            <p class="max-w-2xl mx-auto text-sm sm:text-base leading-relaxed text-white/70 font-light">
+                Levando reflexões sobre inteligência emocional, propósito e alta performance para grandes ecossistemas e corporações de forma elegante e intimista.
             </p>
 
+            <div class="grid sm:grid-cols-3 gap-6 pt-16">
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-xl transition-all duration-300 hover:border-white/20">
+                    <h3 class="editorial-title text-4xl lg:text-5xl text-[oklch(0.67_0.09_72)] mb-2">+2.500</h3>
+                    <p class="text-[10px] tracking-[0.2em] text-white/60 uppercase font-medium">Atendimentos Realizados</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-xl transition-all duration-300 hover:border-white/20">
+                    <h3 class="editorial-title text-4xl lg:text-5xl text-[oklch(0.67_0.09_72)] mb-2">Premium</h3>
+                    <p class="text-[10px] tracking-[0.2em] text-white/60 uppercase font-medium">Experiências Personalizadas</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-xl transition-all duration-300 hover:border-white/20">
+                    <h3 class="editorial-title text-4xl lg:text-5xl text-[oklch(0.67_0.09_72)] mb-2">Global</h3>
+                    <p class="text-[10px] tracking-[0.2em] text-white/60 uppercase font-medium">Mentorias e Eventos Globais</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-    </div>
-
-</section>
-
-<section id="servicos" class="py-28 bg-[#FFFFFF]">
-
-    <div class="max-w-7xl mx-auto px-6">
-
-        <div class="text-center mb-20">
-
-            <span class="uppercase text-xs font-semibold tracking-[0.2em] text-[#B08A5B]">
-                Serviços
-            </span>
-
-            <h2 class="section-title mt-4">
-                Experiências e Atendimentos
-            </h2>
-
-            <div class="line mt-6"></div>
-
+    <section class="py-24 bg-[oklch(0.67_0.09_72)] text-[oklch(0.21_0.02_35)] text-center relative">
+        <div class="max-w-4xl mx-auto px-6 space-y-4">
+            <h2 class="editorial-title text-3xl sm:text-5xl font-light tracking-wide uppercase">Sua evolução pessoal começa hoje.</h2>
+            <p class="text-sm sm:text-base font-light opacity-90 max-w-xl mx-auto">Reserve um espaço na agenda do KNT Instituto e desfrute de metodologias sob medida.</p>
         </div>
+    </section>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <div class="service-card bg-[#F7F4EF] p-10 rounded-none">
-
-                <div class="text-4xl bronze-text mb-6">
-                    <i class="fa-solid fa-users"></i>
-                </div>
-
-                <h3 class="text-xl font-medium mb-4 text-[#2B221B]">
-                    Mentoria
-                </h3>
-
-                <p class="leading-7 text-sm text-[#2B221B]/70 font-light">
-                    Acompanhamento personalizado focado em acelerar seus resultados, 
-                    destravar seu potencial e direcionar sua jornada.
-                </p>
-
+    <section id="contato" class="py-32 bg-[oklch(0.97_0.01_60)] scroll-reveal">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="text-center max-w-xl mx-auto space-y-4 mb-20">
+                <span class="text-[oklch(0.67_0.09_72)] text-xs font-semibold tracking-[0.25em] uppercase block">Conectar-se</span>
+                <h2 class="editorial-title text-4xl sm:text-5xl text-[oklch(0.21_0.02_35)]">Canais de Atendimento</h2>
+                <div class="w-16 h-[1px] bg-[oklch(0.67_0.09_72)] mx-auto"></div>
             </div>
 
-            <div class="service-card bg-[#F7F4EF] p-10 rounded-none">
+            <div class="grid sm:grid-cols-3 gap-6">
+                <a href="https://wa.me/5531972565641" target="_blank" class="bg-white p-8 rounded-2xl text-center border border-black/5 hover:-translate-y-1.5 transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col items-center justify-center space-y-4">
+                    <div class="text-3xl text-[oklch(0.67_0.09_72)]"><i class="fa-brands fa-whatsapp"></i></div>
+                    <h3 class="text-base font-medium text-[oklch(0.21_0.02_35)]">WhatsApp</h3>
+                    <p class="text-xs text-[oklch(0.21_0.02_35)]/60 font-light">(31) 96477-7862</p>
+                </a>
 
-                <div class="text-4xl bronze-text mb-6">
-                    <i class="fa-solid fa-microphone-lines"></i>
-                </div>
+                <a href="https://www.instagram.com/nagylatravagliaoficial?igsh=NG5pNzcwMjVjYXc3" target="_blank" class="bg-white p-8 rounded-2xl text-center border border-black/5 hover:-translate-y-1.5 transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col items-center justify-center space-y-4">
+                    <div class="text-3xl text-[oklch(0.67_0.09_72)]"><i class="fa-brands fa-instagram"></i></div>
+                    <h3 class="text-base font-medium text-[oklch(0.21_0.02_35)]">Instagram</h3>
+                    <p class="text-xs text-[oklch(0.21_0.02_35)]/60 font-light">@nagylatravagliaoficial</p>
+                </a>
 
-                <h3 class="text-xl font-medium mb-4 text-[#2B221B]">
-                    Palestras
-                </h3>
-
-                <p class="leading-7 text-sm text-[#2B221B]/70 font-light">
-                    Conteúdos de alto impacto sobre comportamento, liderança e 
-                    desenvolvimento humano para inspirar e transformar o seu público.
-                </p>
-
-            </div>
-
-            <div class="service-card bg-[#F7F4EF] p-10 rounded-none">
-
-                <div class="text-4xl bronze-text mb-6">
-                    <i class="fa-solid fa-briefcase"></i>
-                </div>
-
-                <h3 class="text-xl font-medium mb-4 text-[#2B221B]">
-                    Treinamento Empresarial
-                </h3>
-
-                <p class="leading-7 text-sm text-[#2B221B]/70 font-light">
-                    Capacitações sob medida para o ambiente corporativo, elevando a 
-                    performance, engajamento e a inteligência emocional de equipes.
-                </p>
-
-            </div>
-
-            <div class="service-card bg-[#F7F4EF] p-10 rounded-none">
-
-                <div class="text-4xl bronze-text mb-6">
-                    <i class="fa-solid fa-gem"></i>
-                </div>
-
-                <h3 class="text-xl font-medium mb-4 text-[#2B221B]">
-                    Estratégia de Imagem
-                </h3>
-
-                <p class="leading-7 text-sm text-[#2B221B]/70 font-light">
-                    Construção de uma identidade visual alinhada à sua essência e objetivos, 
-                    fortalecendo sua autoridade e posicionamento pessoal.
-                </p>
-
-            </div>
-
-            <div class="service-card bg-[#F7F4EF] p-10 rounded-none">
-
-                <div class="text-4xl bronze-text mb-6">
-                    <i class="fa-solid fa-brain"></i>
-                </div>
-
-                <h3 class="text-xl font-medium mb-4 text-[#2B221B]">
-                    Terapia
-                </h3>
-
-                <p class="leading-7 text-sm text-[#2B221B]/70 font-light">
-                    Sessões focadas no autoconhecimento, na cura de bloqueios e no 
-                    equilíbrio emocional necessário para uma vida mais leve e plena.
-                </p>
-
+                <a href="https://linktr.ee/Nagylatravaglia" target="_blank" class="bg-white p-8 rounded-2xl text-center border border-black/5 hover:-translate-y-1.5 transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col items-center justify-center space-y-4">
+                    <div class="text-3xl text-[oklch(0.67_0.09_72)]"><i class="fa-solid fa-link"></i></div>
+                    <h3 class="text-base font-medium text-[oklch(0.21_0.02_35)]">Linktree</h3>
+                    <p class="text-xs text-[oklch(0.21_0.02_35)]/60 font-light">Acessar Links Oficiais</p>
+                </a>
             </div>
 
         </div>
+    </section>
 
-    </div>
-
-</section>
-
-<section id="palestras" class="py-28 bg-[#2B221B] text-white">
-
-    <div class="max-w-6xl mx-auto px-6 text-center">
-
-        <span class="uppercase text-xs font-semibold tracking-[0.2em] text-[#B08A5B]">
-            Impacto Institucional
-        </span>
-
-        <h2 class="section-title mt-4 text-white">
-            Palestras que inspiram transformação.
-        </h2>
-
-        <div class="line my-6" style="background: var(--bronze);"></div>
-
-        <p class="max-w-3xl mx-auto text-base md:text-lg leading-8 text-white/70 font-light">
-            Uma comunicação elegante, humana e impactante,
-            levando mensagens de superação, inteligência emocional,
-            propósito de vida e transformação interior para empresas,
-            mulheres, eventos e instituições.
-        </p>
-
-        <div class="grid md:grid-cols-3 gap-8 mt-20">
-
-            <div class="glass p-10 rounded-none">
-                <h3 class="text-4xl font-light text-[#B08A5B] mb-2">+2500</h3>
-                <p class="text-xs tracking-wider text-white/80 font-light uppercase">Atendimentos de Alto Padrão</p>
-            </div>
-
-            <div class="glass p-10 rounded-none">
-                <h3 class="text-4xl font-light text-[#B08A5B] mb-2">Premium</h3>
-                <p class="text-xs tracking-wider text-white/80 font-light uppercase">Posicionamento Sofisticado</p>
-            </div>
-
-            <div class="glass p-10 rounded-none">
-                <h3 class="text-4xl font-light text-[#B08A5B] mb-2">Impacto</h3>
-                <p class="text-xs tracking-wider text-white/80 font-light uppercase">Palestras e Mentorias Globais</p>
-            </div>
-
+    <footer class="bg-[oklch(0.15_0.02_35)] py-16 text-center text-white/50 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 space-y-6">
+            <h3 class="editorial-title text-2xl text-white tracking-[0.2em]">KNT INSTITUTO</h3>
+            <p class="text-[10px] tracking-[0.25em] text-[oklch(0.67_0.09_72)] uppercase font-semibold">Palestrante • Terapeuta • Mentora</p>
+            
+            <div class="w-full h-[1px] bg-white/10 max-w-xs mx-auto my-6"></div>
+            
+            <p class="text-[11px] tracking-wide text-white/30 font-light">© 2026 KNT Instituto — Todos os direitos reservados.</p>
+            <p class="text-[10px] tracking-wide text-white/20">
+                Site desenvolvido por 
+                <a href="https://devduo.tec.br/" target="_blank" rel="noopener noreferrer" class="text-[oklch(0.67_0.09_72)] hover:text-white transition-colors duration-300">DevDuo Tecnologia</a>
+            </p>
         </div>
+    </footer>
 
-    </div>
+    <script>
+        // Header Glass Effect on Scroll
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                header.classList.add('glass-header', 'shadow-xl');
+                header.classList.remove('py-6', 'bg-transparent');
+                header.classList.add('py-4');
+            } else {
+                header.classList.remove('glass-header', 'shadow-xl', 'py-4');
+                header.classList.add('py-6', 'bg-transparent');
+            }
+        });
 
-</section>
+        // Mobile Menu Trigger
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-<section class="py-24 bg-[#B08A5B]">
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
 
-    <div class="max-w-5xl mx-auto px-6 text-center">
+        // Video Controller Logic
+        const video = document.getElementById('meuVideo');
+        const btnPlay = document.getElementById('btnPlay');
 
-        <h2 class="text-3xl md:text-5xl text-[#2B221B] font-light tracking-wide uppercase">
-            Sua transformação começa agora.
-        </h2>
+        function toggleVideoPlay() {
+            if (video.paused) {
+                video.play();
+                btnPlay.classList.add('opacity-0', 'pointer-events-none');
+            } else {
+                video.pause();
+                btnPlay.classList.remove('opacity-0', 'pointer-events-none');
+            }
+        }
 
-        <p class="text-base mt-6 text-[#2B221B]/90 font-light">
-            Agende um atendimento, palestra ou mentoria personalizada com o KNT Instituto.
-        </p>
+        btnPlay.addEventListener('click', toggleVideoPlay);
+        video.addEventListener('click', toggleVideoPlay);
 
-    </div>
+        video.addEventListener('pause', () => {
+            if (!video.ended) btnPlay.classList.remove('opacity-0', 'pointer-events-none');
+        });
 
-</section>
-
-<section id="contato" class="py-24 bg-[#F7F4EF]">
-
-    <div class="max-w-6xl mx-auto px-6">
-
-        <div class="text-center mb-16">
-
-            <span class="uppercase text-xs font-semibold tracking-[0.2em] text-[#B08A5B]">
-                Contato
-            </span>
-
-            <h2 class="section-title mt-4">
-                Vamos conversar.
-            </h2>
-
-            <div class="line mt-6"></div>
-
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-
-            <a href="https://wa.me/5531972565641 "
-            target="_blank"
-            class="bg-white rounded-none p-10 text-center shadow-sm border border-black/[0.03] hover:-translate-y-1 duration-300">
-
-                <div class="text-4xl bronze-text mb-5">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </div>
-
-                <h3 class="text-lg font-medium mb-2 text-[#2B221B]">
-                    WhatsApp
-                </h3>
-
-                <p class="text-sm text-[#2B221B]/70 font-light">
-                    (31) 96477-7862
-                </p>
-
-            </a>
-
-            <a href="https://www.instagram.com/nagylatravagliaoficial?igsh=NG5pNzcwMjVjYXc3"
-            target="_blank"
-            class="bg-white rounded-none p-10 text-center shadow-sm border border-black/[0.03] hover:-translate-y-1 duration-300">
-
-                <div class="text-4xl bronze-text mb-5">
-                    <i class="fa-brands fa-instagram"></i>
-                </div>
-
-                <h3 class="text-lg font-medium mb-2 text-[#2B221B]">
-                    Instagram
-                </h3>
-
-                <p class="text-sm text-[#2B221B]/70 font-light">
-                    @nagylatravagliaoficial
-                </p>
-
-            </a>
-
-            <a href="https://linktr.ee/Nagylatravaglia"
-            target="_blank"
-            class="bg-white rounded-none p-10 text-center shadow-sm border border-black/[0.03] hover:-translate-y-1 duration-300">
-
-                <div class="text-4xl bronze-text mb-5">
-                    <i class="fa-solid fa-link"></i>
-                </div>
-
-                <h3 class="text-lg font-medium mb-2 text-[#2B221B]">
-                    Linktree
-                </h3>
-
-                <p class="text-sm text-[#2B221B]/70 font-light">
-                    Acessar Links Oficiais
-                </p>
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<footer class="bg-[#2B221B] py-14 text-center text-white/60">
-
-    <div class="max-w-7xl mx-auto px-6">
-
-        <h3 class="text-xl text-white tracking-[0.25em] font-light">
-            KNT INSTITUTO
-        </h3>
-
-        <p class="mt-3 text-xs tracking-wider text-[#B08A5B] uppercase font-light">
-            Palestrante • Terapeuta • Mentora
-        </p>
-
-        <p class="mt-12 text-xs tracking-wide text-white/40 font-light">
-            © 2026 KNT Instituto — Todos os direitos reservados.
-        </p>
-
-        <p class="mt-4 text-[11px] tracking-wide text-white/30">
-            Site desenvolvido por
-            <a href="https://devduo.tec.br/"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="text-[#B08A5B] hover:text-white transition-colors">
-                DevDuo Tecnologia
-            </a>
-        </p>
-
-    </div>
-
-</footer>
+        video.addEventListener('ended', () => {
+            video.currentTime = 0;
+            video.pause();
+            btnPlay.classList.remove('opacity-0', 'pointer-events-none');
+        });
+    </script>
+</body>
+</html>
