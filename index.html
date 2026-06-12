@@ -281,7 +281,9 @@ section[id] {
             preload="metadata"
             class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
           >
-            <source src="images/video.mp4" type="video/mp4" />
+            <video src="images/video.mp4" muted playsinline autoplay loop>
+    Seu navegador não suporta o elemento de vídeo.
+</video>
           </video>
 
             <button
@@ -784,7 +786,18 @@ section[id] {
         });
       });
 
-const video = document.getElementById("meuVideo");
+const video = document.querySelector('video'); // Ou a sua variável do vídeo
+
+function tocarVideo() {
+    video.play().catch(error => {
+        console.log("O autoplay foi bloqueado pelo navegador. Aguardando clique do usuário.");
+        
+        // Solução alternativa: Toca o vídeo assim que o usuário clicar na tela
+        document.addEventListener('click', () => {
+            video.play();
+        }, { once: true }); // Executa apenas uma vez
+    });
+}
 const btnPlay = document.getElementById("btnPlay");
 
 btnPlay.addEventListener("click", async () => {
