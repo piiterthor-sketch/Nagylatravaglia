@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KNT Instituto | Palestrante & Terapeuta</title>
 
+    <!-- FAVICONS (Ícones do Site) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -357,7 +364,7 @@
             >Sobre o Instituto</span
           >
           <h2
-            class="editorial-title text-3xl sm:text-5xl text-[oklch(0.21_0.02_35)] leading-[1.2]"
+            class="editorial-title text-3xl sm:text-5xl text-[oklch(0.21_0.02_35)] elegance-[1.2]"
           >
             Uma trajetória moldada por <br /><span class="italic font-serif"
               >propósito e refinamento.</span
@@ -825,7 +832,7 @@
         // Fecha ao clicar fora
         document.addEventListener("click", (e) => {
           if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
-            mobileMenu.add("hidden");
+            mobileMenu.classList.add("hidden");
             mobileBtn.querySelector("i").className = "fa-solid fa-bars";
           }
         });
@@ -834,60 +841,9 @@
       document.querySelectorAll(".mobile-link").forEach((link) => {
         link.addEventListener("click", () => {
           mobileMenu.classList.add("hidden");
-          if (mobileBtn)
-            mobileBtn.querySelector("i").className = "fa-solid fa-bars";
+          if (mobileBtn) mobileBtn.querySelector("i").className = "fa-solid fa-bars";
         });
       });
-
-      // Inicialização do Vídeo
-      const video = document.getElementById("meuVideo");
-      const btnPlay = document.getElementById("btnPlay");
-
-      function tocarVideo() {
-        if (video) {
-          video.play().catch((error) => {
-            console.log("Autoplay bloqueado. Aguardando interação.");
-            document.addEventListener(
-              "click",
-              () => {
-                video.play();
-                btnPlay.classList.add("opacity-0", "pointer-events-none");
-              },
-              { once: true },
-            );
-          });
-        }
-      }
-
-      tocarVideo();
-
-      // Controle do Botão Play Manual
-      if (btnPlay && video) {
-        btnPlay.addEventListener("click", async (e) => {
-          e.stopPropagation();
-          try {
-            await video.play();
-            btnPlay.classList.add("opacity-0", "pointer-events-none");
-          } catch (erro) {
-            console.log("Erro ao reproduzir vídeo:", erro);
-          }
-        });
-
-        // Clique direto no container do vídeo
-        video.addEventListener("click", () => {
-          if (video.paused) {
-            video.play();
-            btnPlay.classList.add("opacity-0", "pointer-events-none");
-          } else {
-            video.pause();
-            btnPlay.classList.remove("opacity-0", "pointer-events-none");
-          }
-        });
-
-        video.addEventListener("ended", () => {
-          btnPlay.classList.remove("opacity-0", "pointer-events-none");
-        });
-      }
     </script>
   </body>
 </html>
